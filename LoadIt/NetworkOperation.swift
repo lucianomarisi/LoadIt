@@ -11,7 +11,7 @@ import Foundation
 public protocol ResourceOperation: class {
   associatedtype ResourceType: JSONResource
   var resource: ResourceType { get }
-  func informDelegateOfResult(result: Result<ResourceType.ModelType>)
+  func finishedWithResult(result: Result<ResourceType.ModelType>)
 }
 
 public protocol NetworkOperation: ResourceOperation {
@@ -27,7 +27,7 @@ extension NetworkOperation {
       NSThread.executeOnMain { [weak self] in
         //      if cancelled { return }
         guard let strongSelf = self else { return }
-        strongSelf.informDelegateOfResult(result)
+        strongSelf.finishedWithResult(result)
         //        finish()
       }
     }

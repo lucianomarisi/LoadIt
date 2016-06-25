@@ -38,6 +38,7 @@
 		4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* Bundle.swift */; };
 		4F3D699C1D1F426500E753D6 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699A1D1F426500E753D6 /* america.json */; };
 		4F3D699D1D1F426500E753D6 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699B1D1F426500E753D6 /* asia.json */; };
+		4F3D699F1D1F43E300E753D6 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		4F3D69981D1F3EB900E753D6 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		4F3D699A1D1F426500E753D6 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
 		4F3D699B1D1F426500E753D6 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
+		4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,8 +205,9 @@
 		4F3D69961D1F3E6F00E753D6 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */,
+				4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */,
 				4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */,
+				4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				4F3D69811D1F3B0400E753D6 /* DiskResource.swift in Sources */,
 				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
 				4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */,
+				4F3D699F1D1F43E300E753D6 /* BaseOperation.swift in Sources */,
 				4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */,
 				4F3D698D1D1F3CB500E753D6 /* DiskService.swift in Sources */,
 				4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */,

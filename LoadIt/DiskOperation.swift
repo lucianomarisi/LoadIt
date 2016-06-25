@@ -8,23 +8,36 @@
 
 import Foundation
 
-public protocol DiskOperation: ResourceOperation {
-  associatedtype ResourceType: DiskResource
-  var diskService: DiskService<ResourceType> { get }
-}
+//public protocol DiskOperationProtocol: class {
+//  associatedtype ResourceType: JSONResource
+//  func finishedWithResult(result: Result<ResourceType.ModelType>)
+//}
 
-extension DiskOperation {
+public class DiskOperation<DiskResourceType: DiskResource>: BaseOperation {//, DiskOperationProtocol {
+
+  public typealias ResourceType = DiskResourceType
+
+  private let diskService = DiskService<ResourceType>()
+  private let resource: ResourceType
+
+  public init(resource: ResourceType) {
+    self.resource = resource
+  }
   
-  public func execute() {
+  public func finishedWithResult(result: Result<ResourceType.ModelType>) {}
+  
+  override func execute() {
     diskService.fetchResource(resource) { [weak self] (result) in
-      //      if cancelled { return }
+      guard let strongSelf = self else { return }
+      if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in
-        //      if cancelled { return }
         guard let strongSelf = self else { return }
-        strongSelf.informDelegateOfResult(result)
-        //        finish()
+        if strongSelf.cancelled { return }
+        strongSelf.finishedWithResult(result)
+        strongSelf.finish()
       }
     }
   }
   
 }
+

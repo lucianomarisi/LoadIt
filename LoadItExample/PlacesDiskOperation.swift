@@ -13,19 +13,18 @@ protocol PlacesDiskOperationDelegate: class {
   func placesOperationDidFinish(operation: PlacesDiskOperation, result: Result<[Place]>)
 }
 
-final class PlacesDiskOperation: DiskOperation {
+final class PlacesDiskOperation: DiskOperation<PlacesResource> {
   
-  let diskService = DiskService<PlacesResource>()
-  let resource: PlacesResource
   private weak var delegate: PlacesDiskOperationDelegate?
   
   init(continent: String, delegate: PlacesDiskOperationDelegate) {
-    self.resource = PlacesResource(continent: continent)
+    let resource = PlacesResource(continent: continent)
     self.delegate = delegate
+    super.init(resource: resource)
   }
   
-  func informDelegateOfResult(result: Result<[Place]>) {
-    //      if cancelled { return }
+  override func finishedWithResult(result: Result<[Place]>) {
+    if cancelled { return }
     self.delegate?.placesOperationDidFinish(self, result: result)
   }
   
