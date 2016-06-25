@@ -15,6 +15,16 @@
 		4F3D69601D1F374E00E753D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D695E1D1F374E00E753D6 /* Main.storyboard */; };
 		4F3D69621D1F374E00E753D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69611D1F374E00E753D6 /* Assets.xcassets */; };
 		4F3D69651D1F374E00E753D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */; };
+		4F3D69701D1F384A00E753D6 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696B1D1F384A00E753D6 /* Decodable.swift */; };
+		4F3D69711D1F384A00E753D6 /* Dictionary+JSONKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696C1D1F384A00E753D6 /* Dictionary+JSONKey.swift */; };
+		4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696D1D1F384A00E753D6 /* Errors.swift */; };
+		4F3D69731D1F384A00E753D6 /* JSONFileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */; };
+		4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696F1D1F384A00E753D6 /* Transformable.swift */; };
+		4F3D69761D1F389100E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69751D1F389100E753D6 /* NSThread+Additions.swift */; };
+		4F3D69781D1F38BB00E753D6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69771D1F38BB00E753D6 /* Place.swift */; };
+		4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResource.swift */; };
+		4F3D697B1D1F39CF00E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
+		4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697C1D1F3A6F00E753D6 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +51,15 @@
 		4F3D69611D1F374E00E753D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3D69641D1F374E00E753D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F3D69661D1F374E00E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3D696B1D1F384A00E753D6 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		4F3D696C1D1F384A00E753D6 /* Dictionary+JSONKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+JSONKey.swift"; sourceTree = "<group>"; };
+		4F3D696D1D1F384A00E753D6 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileLoading.swift; sourceTree = "<group>"; };
+		4F3D696F1D1F384A00E753D6 /* Transformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
+		4F3D69751D1F389100E753D6 /* NSThread+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+Additions.swift"; sourceTree = "<group>"; };
+		4F3D69771D1F38BB00E753D6 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		4F3D69791D1F39A700E753D6 /* JSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResource.swift; sourceTree = "<group>"; };
+		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3D697B1D1F39CF00E753D6 /* LoadIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +114,8 @@
 			children = (
 				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
 				4F3D693F1D1F36D700E753D6 /* Info.plist */,
+				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
+				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
 			);
 			path = LoadIt;
 			sourceTree = "<group>";
@@ -112,12 +134,27 @@
 			children = (
 				4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */,
 				4F3D695C1D1F374E00E753D6 /* ViewController.swift */,
+				4F3D69771D1F38BB00E753D6 /* Place.swift */,
+				4F3D69751D1F389100E753D6 /* NSThread+Additions.swift */,
+				4F3D696A1D1F384A00E753D6 /* JSONUtilities */,
 				4F3D695E1D1F374E00E753D6 /* Main.storyboard */,
 				4F3D69611D1F374E00E753D6 /* Assets.xcassets */,
 				4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */,
 				4F3D69661D1F374E00E753D6 /* Info.plist */,
 			);
 			path = LoadItExample;
+			sourceTree = "<group>";
+		};
+		4F3D696A1D1F384A00E753D6 /* JSONUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D696B1D1F384A00E753D6 /* Decodable.swift */,
+				4F3D696C1D1F384A00E753D6 /* Dictionary+JSONKey.swift */,
+				4F3D696D1D1F384A00E753D6 /* Errors.swift */,
+				4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */,
+				4F3D696F1D1F384A00E753D6 /* Transformable.swift */,
+			);
+			path = JSONUtilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
+				4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +314,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3D69731D1F384A00E753D6 /* JSONFileLoading.swift in Sources */,
+				4F3D69701D1F384A00E753D6 /* Decodable.swift in Sources */,
+				4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */,
+				4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */,
 				4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */,
 				4F3D695B1D1F374E00E753D6 /* AppDelegate.swift in Sources */,
+				4F3D69781D1F38BB00E753D6 /* Place.swift in Sources */,
+				4F3D69761D1F389100E753D6 /* NSThread+Additions.swift in Sources */,
+				4F3D69711D1F384A00E753D6 /* Dictionary+JSONKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -391,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -404,6 +450,7 @@
 		4F3D694F1D1F36D800E753D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -414,12 +461,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucianomarisi.LoadIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4F3D69501D1F36D800E753D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
