@@ -20,7 +20,7 @@ extension JSONResource {
   public func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType? { return nil }
 }
 
-public enum ParsingError: ErrorType {
+enum ParsingError: ErrorType {
   case InvalidJSONData
   case CannotParseJSONDictionary
   case CannotParseJSONArray
@@ -30,7 +30,7 @@ public enum ParsingError: ErrorType {
 // MARK: - Convenince parsing functions
 extension JSONResource {
   
-  public func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<ModelType> {
+  func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<ModelType> {
     if let parsedResults = modelFrom(jsonDictionary: jsonDictionary) {
       return .Success(parsedResults)
     } else {
@@ -38,7 +38,7 @@ extension JSONResource {
     }
   }
   
-  public func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<ModelType> {
+  func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<ModelType> {
     if let parsedResults = modelFrom(jsonArray: jsonArray) {
       return .Success(parsedResults)
     } else {
@@ -46,7 +46,7 @@ extension JSONResource {
     }
   }
   
-  public func resultFrom(data data: NSData) -> Result<ModelType> {
+  func resultFrom(data data: NSData) -> Result<ModelType> {
     guard let jsonObject = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) else {
       return .Failure(ParsingError.InvalidJSONData)
     }

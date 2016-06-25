@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol Session {
+  func performRequest(request: NSURLRequest, completion: (NSData?, NSURLResponse?, NSError?) -> Void)
+}
+
+extension NSURLSession: Session {
+  public func performRequest(request: NSURLRequest, completion: (NSData?, NSURLResponse?, NSError?) -> Void) {
+    dataTaskWithRequest(request, completionHandler: completion).resume()
+  }
+}

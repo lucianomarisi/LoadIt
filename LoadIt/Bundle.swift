@@ -1,5 +1,5 @@
 //
-//  DiskResource.swift
+//  Bundle.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-public protocol DiskResource: JSONResource {
-  var filename: String { get }
+protocol Bundle {
+  func URLForResource(name: String?, withExtension ext: String?) -> NSURL?
 }
+
+extension NSBundle: Bundle {}

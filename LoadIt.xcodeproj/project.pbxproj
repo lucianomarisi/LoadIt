@@ -20,11 +20,24 @@
 		4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696D1D1F384A00E753D6 /* Errors.swift */; };
 		4F3D69731D1F384A00E753D6 /* JSONFileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */; };
 		4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696F1D1F384A00E753D6 /* Transformable.swift */; };
-		4F3D69761D1F389100E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69751D1F389100E753D6 /* NSThread+Additions.swift */; };
 		4F3D69781D1F38BB00E753D6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69771D1F38BB00E753D6 /* Place.swift */; };
 		4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResource.swift */; };
 		4F3D697B1D1F39CF00E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697C1D1F3A6F00E753D6 /* Result.swift */; };
+		4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697E1D1F3AB700E753D6 /* Session.swift */; };
+		4F3D69811D1F3B0400E753D6 /* DiskResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69801D1F3B0400E753D6 /* DiskResource.swift */; };
+		4F3D69831D1F3B1D00E753D6 /* PlacesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69821D1F3B1D00E753D6 /* PlacesResource.swift */; };
+		4F3D69851D1F3B4100E753D6 /* PlacesDiskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69841D1F3B4100E753D6 /* PlacesDiskOperation.swift */; };
+		4F3D69871D1F3B7900E753D6 /* PlacesNetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69861D1F3B7900E753D6 /* PlacesNetworkOperation.swift */; };
+		4F3D69891D1F3BDB00E753D6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69881D1F3BDB00E753D6 /* NetworkService.swift */; };
+		4F3D698B1D1F3C6E00E753D6 /* NetworkResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698A1D1F3C6E00E753D6 /* NetworkResource.swift */; };
+		4F3D698D1D1F3CB500E753D6 /* DiskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698C1D1F3CB500E753D6 /* DiskService.swift */; };
+		4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */; };
+		4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */; };
+		4F3D69941D1F3DF000E753D6 /* DiskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */; };
+		4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* Bundle.swift */; };
+		4F3D699C1D1F426500E753D6 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699A1D1F426500E753D6 /* america.json */; };
+		4F3D699D1D1F426500E753D6 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699B1D1F426500E753D6 /* asia.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +69,23 @@
 		4F3D696D1D1F384A00E753D6 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileLoading.swift; sourceTree = "<group>"; };
 		4F3D696F1D1F384A00E753D6 /* Transformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
-		4F3D69751D1F389100E753D6 /* NSThread+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+Additions.swift"; sourceTree = "<group>"; };
 		4F3D69771D1F38BB00E753D6 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		4F3D69791D1F39A700E753D6 /* JSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResource.swift; sourceTree = "<group>"; };
 		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4F3D697E1D1F3AB700E753D6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		4F3D69801D1F3B0400E753D6 /* DiskResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskResource.swift; sourceTree = "<group>"; };
+		4F3D69821D1F3B1D00E753D6 /* PlacesResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesResource.swift; sourceTree = "<group>"; };
+		4F3D69841D1F3B4100E753D6 /* PlacesDiskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDiskOperation.swift; sourceTree = "<group>"; };
+		4F3D69861D1F3B7900E753D6 /* PlacesNetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesNetworkOperation.swift; sourceTree = "<group>"; };
+		4F3D69881D1F3BDB00E753D6 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4F3D698A1D1F3C6E00E753D6 /* NetworkResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResource.swift; sourceTree = "<group>"; };
+		4F3D698C1D1F3CB500E753D6 /* DiskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskService.swift; sourceTree = "<group>"; };
+		4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+Additions.swift"; sourceTree = "<group>"; };
+		4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskOperation.swift; sourceTree = "<group>"; };
+		4F3D69981D1F3EB900E753D6 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		4F3D699A1D1F426500E753D6 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
+		4F3D699B1D1F426500E753D6 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +140,11 @@
 			children = (
 				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
 				4F3D693F1D1F36D700E753D6 /* Info.plist */,
-				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
+				4F3D69951D1F3E6400E753D6 /* Resources */,
+				4F3D69961D1F3E6F00E753D6 /* Operations */,
+				4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */,
 				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
+				4F3D69971D1F3E7C00E753D6 /* Services */,
 			);
 			path = LoadIt;
 			sourceTree = "<group>";
@@ -134,13 +163,17 @@
 			children = (
 				4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */,
 				4F3D695C1D1F374E00E753D6 /* ViewController.swift */,
+				4F3D69821D1F3B1D00E753D6 /* PlacesResource.swift */,
+				4F3D69841D1F3B4100E753D6 /* PlacesDiskOperation.swift */,
+				4F3D69861D1F3B7900E753D6 /* PlacesNetworkOperation.swift */,
 				4F3D69771D1F38BB00E753D6 /* Place.swift */,
-				4F3D69751D1F389100E753D6 /* NSThread+Additions.swift */,
 				4F3D696A1D1F384A00E753D6 /* JSONUtilities */,
 				4F3D695E1D1F374E00E753D6 /* Main.storyboard */,
 				4F3D69611D1F374E00E753D6 /* Assets.xcassets */,
 				4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */,
 				4F3D69661D1F374E00E753D6 /* Info.plist */,
+				4F3D699A1D1F426500E753D6 /* america.json */,
+				4F3D699B1D1F426500E753D6 /* asia.json */,
 			);
 			path = LoadItExample;
 			sourceTree = "<group>";
@@ -155,6 +188,36 @@
 				4F3D696F1D1F384A00E753D6 /* Transformable.swift */,
 			);
 			path = JSONUtilities;
+			sourceTree = "<group>";
+		};
+		4F3D69951D1F3E6400E753D6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
+				4F3D69801D1F3B0400E753D6 /* DiskResource.swift */,
+				4F3D698A1D1F3C6E00E753D6 /* NetworkResource.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4F3D69961D1F3E6F00E753D6 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */,
+				4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		4F3D69971D1F3E7C00E753D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D697E1D1F3AB700E753D6 /* Session.swift */,
+				4F3D69981D1F3EB900E753D6 /* Bundle.swift */,
+				4F3D69881D1F3BDB00E753D6 /* NetworkService.swift */,
+				4F3D698C1D1F3CB500E753D6 /* DiskService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +349,8 @@
 			files = (
 				4F3D69651D1F374E00E753D6 /* LaunchScreen.storyboard in Resources */,
 				4F3D69621D1F374E00E753D6 /* Assets.xcassets in Resources */,
+				4F3D699D1D1F426500E753D6 /* asia.json in Resources */,
+				4F3D699C1D1F426500E753D6 /* america.json in Resources */,
 				4F3D69601D1F374E00E753D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3D69891D1F3BDB00E753D6 /* NetworkService.swift in Sources */,
+				4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */,
+				4F3D69941D1F3DF000E753D6 /* DiskOperation.swift in Sources */,
+				4F3D69811D1F3B0400E753D6 /* DiskResource.swift in Sources */,
 				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
 				4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */,
+				4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */,
+				4F3D698D1D1F3CB500E753D6 /* DiskService.swift in Sources */,
+				4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */,
+				4F3D698B1D1F3C6E00E753D6 /* NetworkResource.swift in Sources */,
+				4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,13 +389,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3D69731D1F384A00E753D6 /* JSONFileLoading.swift in Sources */,
+				4F3D69831D1F3B1D00E753D6 /* PlacesResource.swift in Sources */,
+				4F3D69851D1F3B4100E753D6 /* PlacesDiskOperation.swift in Sources */,
 				4F3D69701D1F384A00E753D6 /* Decodable.swift in Sources */,
 				4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */,
 				4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */,
+				4F3D69871D1F3B7900E753D6 /* PlacesNetworkOperation.swift in Sources */,
 				4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */,
 				4F3D695B1D1F374E00E753D6 /* AppDelegate.swift in Sources */,
 				4F3D69781D1F38BB00E753D6 /* Place.swift in Sources */,
-				4F3D69761D1F389100E753D6 /* NSThread+Additions.swift in Sources */,
 				4F3D69711D1F384A00E753D6 /* Dictionary+JSONKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
