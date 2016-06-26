@@ -19,16 +19,18 @@ public protocol NetworkOperation: ResourceOperation {
   var networkService: NetworkService<ResourceType> { get }
 }
 
-extension NetworkOperation {
+public extension NetworkOperation where Self: BaseOperation {
   
-  public func execute() {
+  public func fetch() {
+    if cancelled { return }
     networkService.fetchResource(resource) { [weak self] (result) in
-      //      if cancelled { return }
+      guard let strongSelf = self else { return }
+      if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in
-        //      if cancelled { return }
         guard let strongSelf = self else { return }
+        if strongSelf.cancelled { return }
         strongSelf.finishedWithResult(result)
-        //        finish()
+        strongSelf.finish()
       }
     }
   }

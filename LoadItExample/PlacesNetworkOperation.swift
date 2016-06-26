@@ -13,7 +13,7 @@ protocol PlacesNetworkOperationDelegate: class {
   func placesOperationDidFinish(operation: PlacesNetworkOperation, result: Result<[Place]>)
 }
 
-final class PlacesNetworkOperation: NetworkOperation {
+final class PlacesNetworkOperation: BaseOperation, NetworkOperation {
   
   let networkService = NetworkService<PlacesResource>()
   let resource: PlacesResource
@@ -22,11 +22,21 @@ final class PlacesNetworkOperation: NetworkOperation {
   init(continent: String, delegate: PlacesNetworkOperationDelegate) {
     self.resource = PlacesResource(continent: continent)
     self.delegate = delegate
+    super.init()
   }
   
   func finishedWithResult(result: Result<[Place]>) {
-    //      if cancelled { return }
+    if cancelled { return }
     self.delegate?.placesOperationDidFinish(self, result: result)
+  }
+  
+  override func main() {
+    super.main()
+    fetch()
+  }
+  
+  deinit {
+    print("PlacesNetworkOperation deinit")
   }
   
 }
