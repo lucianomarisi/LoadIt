@@ -13,7 +13,7 @@ public protocol Resource {
 }
 
 public protocol JSONResource: Resource {
-  associatedtype ModelType
+  associatedtype ModelType // Not sure why this needs redeclaring to keep the Swift compiler happy
   func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> ModelType?
   func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType?
 }
@@ -47,6 +47,7 @@ extension JSONResource {
       return resultFrom(jsonArray: jsonArray)
     }
     
+    // This is likely an impossible case since `JSONObjectWithData` likely only returns [String: AnyObject] or [AnyObject] but still needed to appease the compiler
     return .Failure(ParsingError.UnsupportedType)
   }
   

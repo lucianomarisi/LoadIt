@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol NetworkJSONResource: JSONResource {
+public protocol NetworkResource {
   var url: NSURL { get }
   var HTTPMethod: String { get }
   var allHTTPHeaderFields: [String: String]? { get }
@@ -16,15 +16,15 @@ public protocol NetworkJSONResource: JSONResource {
 }
 
 // MARK: - NetworkJSONResource defaults
-extension NetworkJSONResource {
+extension NetworkResource {
   public var HTTPMethod: String { return "GET" }
   public var allHTTPHeaderFields: [String: String]? { return nil }
   public var JSONBody: AnyObject? { return nil }
 }
 
 // MARK: - Request building
-extension NetworkJSONResource {
-  func urlRequest() -> NSMutableURLRequest {
+extension NetworkResource {
+  func urlRequest() -> NSURLRequest {
     let request = NSMutableURLRequest(URL: url)
     request.allHTTPHeaderFields = allHTTPHeaderFields
     request.HTTPMethod = HTTPMethod
@@ -36,3 +36,5 @@ extension NetworkJSONResource {
     return request
   }
 }
+
+public protocol NetworkJSONResource: NetworkResource, JSONResource {}
