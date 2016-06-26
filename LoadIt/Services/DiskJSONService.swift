@@ -25,7 +25,7 @@ public struct DiskJSONService<ResourceType: DiskJSONResource> {
     self.bundle = bundle
   }
   
-  public func fetchResource(resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
+  public func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
     completion(resultFrom(resource: resource))
   }
   

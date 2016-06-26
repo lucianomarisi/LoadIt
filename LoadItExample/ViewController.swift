@@ -30,12 +30,12 @@ class ViewController: UIViewController {
     let placesResource = PlacesResource(continent: "america")
     
     let diskJSONService = DiskJSONService<PlacesResource>()
-    diskJSONService.fetchResource(placesResource) {[weak self] result in
+    diskJSONService.fetch(resource: placesResource) {[weak self] result in
       self?.log(result: result)
     }
     
     let networkJSONService = NetworkJSONService<PlacesResource>()
-    networkJSONService.fetchResource(placesResource) { [weak self] result in
+    networkJSONService.fetch(resource: placesResource) { [weak self] result in
       self?.log(result: result)
     }
     

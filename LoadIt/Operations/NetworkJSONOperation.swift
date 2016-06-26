@@ -17,7 +17,7 @@ public extension NetworkJSONOperation {
   
   public func fetchResource() {
     if cancelled { return }
-    networkJSONService.fetchResource(resource) { [weak self] (result) in
+    networkJSONService.fetch(resource: resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
       if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in

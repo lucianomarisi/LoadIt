@@ -17,7 +17,7 @@ public extension DiskJSONOperation {
   
   public func fetchResource() {
     if cancelled { return }
-    diskJSONService.fetchResource(resource) { [weak self] (result) in
+    diskJSONService.fetch(resource: resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
       if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in

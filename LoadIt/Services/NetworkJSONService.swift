@@ -25,7 +25,7 @@ public struct NetworkJSONService<ResourceType: NetworkJSONResource> {
     self.session = session
   }
   
-  public func fetchResource(resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
+  public func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
     let urlRequest = resource.urlRequest()
 
     session.performRequest(urlRequest) { (data, _, error) in
