@@ -13,7 +13,6 @@ public protocol NetworkOperation: ResourceOperation {
   var networkService: NetworkService<ResourceType> { get }
 }
 
-
 public extension NetworkOperation {
   
   public func fetchResource() {
@@ -31,4 +30,3 @@ public extension NetworkOperation {
   }
   
 }
-

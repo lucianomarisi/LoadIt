@@ -12,20 +12,17 @@ import LoadIt
 class ViewController: UIViewController {
 
   private let operationQueue = NSOperationQueue()
-//  private var placesNetworkOperation: PlacesNetworkOperation!
 
   override func viewDidLoad() {
     super.viewDidLoad()    
     let placesNetworkOperation = PlacesNetworkOperation(continent: "europe", delegate: self)
-//    placesNetworkOperation.execute()
     operationQueue.addOperation(placesNetworkOperation)
 //    operationQueue.cancelAllOperations()
     
     let placesDiskOperation = PlacesDiskOperation(continent: "asia", delegate: self)
-
     operationQueue.addOperation(placesDiskOperation)
 //    operationQueue.cancelAllOperations()
-//    placesDiskOperation.execute()
+
     
     let placesResource = PlacesResource(continent: "america")
     

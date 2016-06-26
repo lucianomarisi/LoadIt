@@ -8,7 +8,11 @@
 
 import Foundation
 
-public protocol JSONResource {
+public protocol Resource {
+  associatedtype ModelType
+}
+
+public protocol JSONResource: Resource {
   associatedtype ModelType
   func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> ModelType?
   func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType?
