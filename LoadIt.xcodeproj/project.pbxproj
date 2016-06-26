@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F541D1FF9580030101A /* ResourceOperation.swift */; };
+		4F196F581D2001CC0030101A /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F571D2001CC0030101A /* BaseOperation.swift */; };
 		4F3D693E1D1F36D700E753D6 /* LoadIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D693D1D1F36D700E753D6 /* LoadIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3D69451D1F36D800E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69491D1F36D800E753D6 /* LoadItTests.swift */; };
@@ -39,7 +40,6 @@
 		4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* Bundle.swift */; };
 		4F3D699C1D1F426500E753D6 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699A1D1F426500E753D6 /* america.json */; };
 		4F3D699D1D1F426500E753D6 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699B1D1F426500E753D6 /* asia.json */; };
-		4F3D699F1D1F43E300E753D6 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		4F196F541D1FF9580030101A /* ResourceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperation.swift; sourceTree = "<group>"; };
+		4F196F571D2001CC0030101A /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		4F3D693A1D1F36D700E753D6 /* LoadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3D693D1D1F36D700E753D6 /* LoadIt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadIt.h; sourceTree = "<group>"; };
 		4F3D693F1D1F36D700E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		4F3D69981D1F3EB900E753D6 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		4F3D699A1D1F426500E753D6 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
 		4F3D699B1D1F426500E753D6 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
-		4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +168,7 @@
 				4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */,
 				4F3D695C1D1F374E00E753D6 /* ViewController.swift */,
 				4F3D69821D1F3B1D00E753D6 /* PlacesResource.swift */,
+				4F196F571D2001CC0030101A /* BaseOperation.swift */,
 				4F3D69841D1F3B4100E753D6 /* PlacesDiskOperation.swift */,
 				4F3D69861D1F3B7900E753D6 /* PlacesNetworkOperation.swift */,
 				4F3D69771D1F38BB00E753D6 /* Place.swift */,
@@ -207,7 +208,6 @@
 		4F3D69961D1F3E6F00E753D6 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */,
 				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
 				4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */,
 				4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */,
@@ -375,7 +375,6 @@
 				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
 				4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */,
 				4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */,
-				4F3D699F1D1F43E300E753D6 /* BaseOperation.swift in Sources */,
 				4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */,
 				4F3D698D1D1F3CB500E753D6 /* DiskService.swift in Sources */,
 				4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */,
@@ -402,6 +401,7 @@
 				4F3D69701D1F384A00E753D6 /* Decodable.swift in Sources */,
 				4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */,
 				4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */,
+				4F196F581D2001CC0030101A /* BaseOperation.swift in Sources */,
 				4F3D69871D1F3B7900E753D6 /* PlacesNetworkOperation.swift in Sources */,
 				4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */,
 				4F3D695B1D1F374E00E753D6 /* AppDelegate.swift in Sources */,
