@@ -66,8 +66,8 @@ public class BaseOperation: NSOperation {
     assertionFailure("execute must overriden")
     finish()
   }
-  
-  public final func finish() {
+
+  public final func finish(errors: [NSError] = []) {
     self.finished = true
     self.executing = false
   }

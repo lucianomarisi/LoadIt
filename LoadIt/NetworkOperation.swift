@@ -25,7 +25,7 @@ public extension NetworkOperation {
         guard let strongSelf = self else { return }
         if strongSelf.cancelled { return }
         strongSelf.finishedWithResult(result)
-        strongSelf.finish()
+        strongSelf.finish([])
       }
     }
   }

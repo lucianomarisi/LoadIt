@@ -13,7 +13,7 @@ public protocol Cancellable: class {
 }
 
 public protocol Finishable: class {
-  func finish()
+  func finish(errors: [NSError])
 }
 
 public protocol ResourceOperation: Cancellable, Finishable {

@@ -34,10 +34,10 @@ class ViewController: UIViewController {
       self?.log(result: result)
     }
     
-//    let networkService = NetworkService<PlacesResource>()
-//    networkService.fetchResource(placesResource) { [weak self] result in
-//      self?.log(result: result)
-//    }
+    let networkService = NetworkService<PlacesResource>()
+    networkService.fetchResource(placesResource) { [weak self] result in
+      self?.log(result: result)
+    }
     
   }
     
