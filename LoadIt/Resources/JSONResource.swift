@@ -34,22 +34,6 @@ enum ParsingError: ErrorType {
 // MARK: - Convenince parsing functions
 extension JSONResource {
   
-  func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<ModelType> {
-    if let parsedResults = modelFrom(jsonDictionary: jsonDictionary) {
-      return .Success(parsedResults)
-    } else {
-      return .Failure(ParsingError.CannotParseJSONDictionary)
-    }
-  }
-  
-  func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<ModelType> {
-    if let parsedResults = modelFrom(jsonArray: jsonArray) {
-      return .Success(parsedResults)
-    } else {
-      return .Failure(ParsingError.CannotParseJSONArray)
-    }
-  }
-  
   func resultFrom(data data: NSData) -> Result<ModelType> {
     guard let jsonObject = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) else {
       return .Failure(ParsingError.InvalidJSONData)
@@ -64,6 +48,22 @@ extension JSONResource {
     }
     
     return .Failure(ParsingError.UnsupportedType)
+  }
+  
+  private func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<ModelType> {
+    if let parsedResults = modelFrom(jsonDictionary: jsonDictionary) {
+      return .Success(parsedResults)
+    } else {
+      return .Failure(ParsingError.CannotParseJSONDictionary)
+    }
+  }
+  
+  private func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<ModelType> {
+    if let parsedResults = modelFrom(jsonArray: jsonArray) {
+      return .Success(parsedResults)
+    } else {
+      return .Failure(ParsingError.CannotParseJSONArray)
+    }
   }
   
 }
