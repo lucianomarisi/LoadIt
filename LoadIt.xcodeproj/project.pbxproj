@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F541D1FF9580030101A /* ResourceOperation.swift */; };
 		4F196F581D2001CC0030101A /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F571D2001CC0030101A /* BaseOperation.swift */; };
+		4F196F5B1D20022D0030101A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* Bundle.swift */; };
 		4F3D693E1D1F36D700E753D6 /* LoadIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D693D1D1F36D700E753D6 /* LoadIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3D69451D1F36D800E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69491D1F36D800E753D6 /* LoadItTests.swift */; };
@@ -37,7 +38,6 @@
 		4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */; };
 		4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */; };
 		4F3D69941D1F3DF000E753D6 /* DiskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */; };
-		4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* Bundle.swift */; };
 		4F3D699C1D1F426500E753D6 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699A1D1F426500E753D6 /* america.json */; };
 		4F3D699D1D1F426500E753D6 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699B1D1F426500E753D6 /* asia.json */; };
 /* End PBXBuildFile section */
@@ -119,11 +119,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F196F591D2001EF0030101A /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4F196F571D2001CC0030101A /* BaseOperation.swift */,
+				4F3D69841D1F3B4100E753D6 /* PlacesDiskOperation.swift */,
+				4F3D69861D1F3B7900E753D6 /* PlacesNetworkOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		4F196F5A1D2001FD0030101A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D69771D1F38BB00E753D6 /* Place.swift */,
+				4F3D69821D1F3B1D00E753D6 /* PlacesResource.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4F3D69301D1F36D700E753D6 = {
 			isa = PBXGroup;
 			children = (
-				4F3D69591D1F374E00E753D6 /* LoadItExample */,
 				4F3D693C1D1F36D700E753D6 /* LoadIt */,
+				4F3D69591D1F374E00E753D6 /* LoadItExample */,
 				4F3D69481D1F36D800E753D6 /* LoadItTests */,
 				4F3D693B1D1F36D700E753D6 /* Products */,
 			);
@@ -142,13 +161,13 @@
 		4F3D693C1D1F36D700E753D6 /* LoadIt */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
-				4F3D693F1D1F36D700E753D6 /* Info.plist */,
-				4F3D69951D1F3E6400E753D6 /* Resources */,
 				4F3D69961D1F3E6F00E753D6 /* Operations */,
+				4F3D69951D1F3E6400E753D6 /* Resources */,
+				4F3D69971D1F3E7C00E753D6 /* Services */,
+				4F3D693F1D1F36D700E753D6 /* Info.plist */,
+				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
 				4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */,
 				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
-				4F3D69971D1F3E7C00E753D6 /* Services */,
 			);
 			path = LoadIt;
 			sourceTree = "<group>";
@@ -156,8 +175,8 @@
 		4F3D69481D1F36D800E753D6 /* LoadItTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69491D1F36D800E753D6 /* LoadItTests.swift */,
 				4F3D694B1D1F36D800E753D6 /* Info.plist */,
+				4F3D69491D1F36D800E753D6 /* LoadItTests.swift */,
 			);
 			path = LoadItTests;
 			sourceTree = "<group>";
@@ -165,18 +184,15 @@
 		4F3D69591D1F374E00E753D6 /* LoadItExample */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */,
-				4F3D695C1D1F374E00E753D6 /* ViewController.swift */,
-				4F3D69821D1F3B1D00E753D6 /* PlacesResource.swift */,
-				4F196F571D2001CC0030101A /* BaseOperation.swift */,
-				4F3D69841D1F3B4100E753D6 /* PlacesDiskOperation.swift */,
-				4F3D69861D1F3B7900E753D6 /* PlacesNetworkOperation.swift */,
-				4F3D69771D1F38BB00E753D6 /* Place.swift */,
 				4F3D696A1D1F384A00E753D6 /* JSONUtilities */,
-				4F3D695E1D1F374E00E753D6 /* Main.storyboard */,
+				4F196F5A1D2001FD0030101A /* Models */,
+				4F196F591D2001EF0030101A /* Operations */,
+				4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */,
 				4F3D69611D1F374E00E753D6 /* Assets.xcassets */,
-				4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */,
 				4F3D69661D1F374E00E753D6 /* Info.plist */,
+				4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */,
+				4F3D695E1D1F374E00E753D6 /* Main.storyboard */,
+				4F3D695C1D1F374E00E753D6 /* ViewController.swift */,
 				4F3D699A1D1F426500E753D6 /* america.json */,
 				4F3D699B1D1F426500E753D6 /* asia.json */,
 			);
@@ -198,32 +214,32 @@
 		4F3D69951D1F3E6400E753D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
 				4F3D69801D1F3B0400E753D6 /* DiskResource.swift */,
+				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
 				4F3D698A1D1F3C6E00E753D6 /* NetworkResource.swift */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4F3D69961D1F3E6F00E753D6 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
 				4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */,
 				4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */,
+				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
 			);
-			name = Operations;
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		4F3D69971D1F3E7C00E753D6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D697E1D1F3AB700E753D6 /* Session.swift */,
 				4F3D69981D1F3EB900E753D6 /* Bundle.swift */,
-				4F3D69881D1F3BDB00E753D6 /* NetworkService.swift */,
 				4F3D698C1D1F3CB500E753D6 /* DiskService.swift */,
+				4F3D69881D1F3BDB00E753D6 /* NetworkService.swift */,
+				4F3D697E1D1F3AB700E753D6 /* Session.swift */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3D69891D1F3BDB00E753D6 /* NetworkService.swift in Sources */,
+				4F196F5B1D20022D0030101A /* Bundle.swift in Sources */,
 				4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */,
 				4F3D69941D1F3DF000E753D6 /* DiskOperation.swift in Sources */,
 				4F3D69811D1F3B0400E753D6 /* DiskResource.swift in Sources */,
@@ -377,7 +394,6 @@
 				4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */,
 				4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */,
 				4F3D698D1D1F3CB500E753D6 /* DiskService.swift in Sources */,
-				4F3D69991D1F3EB900E753D6 /* Bundle.swift in Sources */,
 				4F3D698B1D1F3C6E00E753D6 /* NetworkResource.swift in Sources */,
 				4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */,
 			);
@@ -427,6 +443,7 @@
 				4F3D695F1D1F374E00E753D6 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */ = {
@@ -435,6 +452,7 @@
 				4F3D69641D1F374E00E753D6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
