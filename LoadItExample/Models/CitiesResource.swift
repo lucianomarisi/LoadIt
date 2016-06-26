@@ -20,6 +20,7 @@ struct CitiesResource: NetworkJSONResource, DiskJSONResource {
     filename = continent
   }
   
+  //MARK: JSONResource
   func modelFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> [City]? {
     guard let
       citiesJSONArray: [[String: AnyObject]] = jsonDictionary["cities"] as? [[String: AnyObject]]

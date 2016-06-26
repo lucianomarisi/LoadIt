@@ -34,8 +34,4 @@ final class CitiesNetworkJSONOperation: BaseOperation, NetworkJSONOperation {
     self.delegate?.citiesOperationDidFinish(self, result: result)
   }
   
-  deinit {
-    print("CitiesNetworkJSONOperation deinit")
-  }
-  
 }
