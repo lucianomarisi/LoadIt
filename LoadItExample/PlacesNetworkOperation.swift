@@ -18,20 +18,19 @@ final class PlacesNetworkOperation: BaseOperation, NetworkOperation {
   let networkService = NetworkService<PlacesResource>()
   let resource: PlacesResource
   private weak var delegate: PlacesNetworkOperationDelegate?
-  
+    
   init(continent: String, delegate: PlacesNetworkOperationDelegate) {
     self.resource = PlacesResource(continent: continent)
     self.delegate = delegate
     super.init()
   }
   
+  override func execute() {
+    fetchResource()
+  }
+
   func finishedWithResult(result: Result<[Place]>) {
     self.delegate?.placesOperationDidFinish(self, result: result)
-  }
-  
-  override func main() {
-    super.main()
-    fetch()
   }
   
   deinit {

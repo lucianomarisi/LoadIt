@@ -25,7 +25,7 @@ public struct NetworkService<ResourceType: NetworkResource> {
     self.session = session
   }
   
-  public func fetchResource(resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
+  func fetchResource(resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
     let urlRequest = resource.urlRequest()
     
     session.performRequest(urlRequest) { (data, _, error) in
@@ -34,7 +34,7 @@ public struct NetworkService<ResourceType: NetworkResource> {
     
   }
   
-  func resultFrom(resource resource: ResourceType, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<ResourceType.ModelType> {
+  private func resultFrom(resource resource: ResourceType, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<ResourceType.ModelType> {
     if let error = error {
       return .Failure(NetworkServiceError.NetworkingError(error: error))
     }

@@ -19,9 +19,14 @@ public protocol NetworkOperation: ResourceOperation {
   var networkService: NetworkService<ResourceType> { get }
 }
 
-public extension NetworkOperation where Self: BaseOperation {
+public protocol CancellableFinishableOperation {
+   var cancelled: Bool { get }
+   func finish()
+}
+
+public extension NetworkOperation where Self: CancellableFinishableOperation {
   
-  public func fetch() {
+  public func fetchResource() {
     if cancelled { return }
     networkService.fetchResource(resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
