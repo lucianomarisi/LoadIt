@@ -24,8 +24,12 @@ final class PlacesDiskOperation: DiskOperation<PlacesResource> {
   }
   
   override func finishedWithResult(result: Result<[Place]>) {
-    if cancelled { return }
     self.delegate?.placesOperationDidFinish(self, result: result)
   }
+  
+  deinit {
+    print("PlacesDiskOperation deinit")
+  }
+  
   
 }

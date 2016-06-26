@@ -26,7 +26,6 @@ final class PlacesNetworkOperation: BaseOperation, NetworkOperation {
   }
   
   func finishedWithResult(result: Result<[Place]>) {
-    if cancelled { return }
     self.delegate?.placesOperationDidFinish(self, result: result)
   }
   

@@ -26,7 +26,9 @@ public class DiskOperation<DiskResourceType: DiskResource>: BaseOperation {//, D
   
   public func finishedWithResult(result: Result<ResourceType.ModelType>) {}
   
-  public func execute() {
+  public override func main() {
+    super.main()
+    if cancelled { return }
     diskService.fetchResource(resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
       if strongSelf.cancelled { return }

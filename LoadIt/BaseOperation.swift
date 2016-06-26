@@ -39,7 +39,7 @@ public class BaseOperation: NSOperation {
   }
   
   var _newCancelled: Bool = false
-  public var newCancelled: Bool {
+  var newCancelled: Bool {
     get { return _newCancelled }
     set {
       willChangeValueForKey("isCancelled")
