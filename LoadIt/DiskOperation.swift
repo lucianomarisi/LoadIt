@@ -8,25 +8,14 @@
 
 import Foundation
 
-//public protocol DiskOperationProtocol: class {
-//  associatedtype ResourceType: JSONResource
-//  func finishedWithResult(result: Result<ResourceType.ModelType>)
-//}
+public protocol DiskOperation: ResourceOperation {
+  associatedtype ResourceType: DiskResource
+  var diskService: DiskService<ResourceType> { get }
+}
 
-public class DiskOperation<DiskResourceType: DiskResource>: BaseOperation {//, DiskOperationProtocol {
-
-  public typealias ResourceType = DiskResourceType
-
-  private let diskService = DiskService<ResourceType>()
-  private let resource: ResourceType
-
-  public init(resource: ResourceType) {
-    self.resource = resource
-  }
+public extension DiskOperation {
   
-  public func finishedWithResult(result: Result<ResourceType.ModelType>) {}
-  
-  public override func execute() {
+  public func fetchResource() {
     if cancelled { return }
     diskService.fetchResource(resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
@@ -41,4 +30,3 @@ public class DiskOperation<DiskResourceType: DiskResource>: BaseOperation {//, D
   }
   
 }
-

@@ -53,7 +53,7 @@ class ViewController: UIViewController {
 
 extension ViewController: PlacesNetworkOperationDelegate {
   func placesOperationDidFinish(operation: PlacesNetworkOperation, result: Result<[Place]>) {
-    //      if cancelled { return }
+    if operation.cancelled { return }
     log(result: result)
   }
 }
@@ -61,7 +61,7 @@ extension ViewController: PlacesNetworkOperationDelegate {
 extension ViewController: PlacesDiskOperationDelegate {
   
   func placesOperationDidFinish(operation: PlacesDiskOperation, result: Result<[Place]>) {
-    //      if cancelled { return }
+    if operation.cancelled { return }
     log(result: result)
   }
   

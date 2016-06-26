@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F541D1FF9580030101A /* ResourceOperation.swift */; };
 		4F3D693E1D1F36D700E753D6 /* LoadIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D693D1D1F36D700E753D6 /* LoadIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3D69451D1F36D800E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69491D1F36D800E753D6 /* LoadItTests.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F196F541D1FF9580030101A /* ResourceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperation.swift; sourceTree = "<group>"; };
 		4F3D693A1D1F36D700E753D6 /* LoadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3D693D1D1F36D700E753D6 /* LoadIt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadIt.h; sourceTree = "<group>"; };
 		4F3D693F1D1F36D700E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3D699E1D1F43E300E753D6 /* BaseOperation.swift */,
+				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
 				4F3D69931D1F3DF000E753D6 /* DiskOperation.swift */,
 				4F3D698E1D1F3D9F00E753D6 /* NetworkOperation.swift */,
 			);
@@ -371,6 +374,7 @@
 				4F3D69811D1F3B0400E753D6 /* DiskResource.swift in Sources */,
 				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
 				4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */,
+				4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */,
 				4F3D699F1D1F43E300E753D6 /* BaseOperation.swift in Sources */,
 				4F3D698F1D1F3D9F00E753D6 /* NetworkOperation.swift in Sources */,
 				4F3D698D1D1F3CB500E753D6 /* DiskService.swift in Sources */,
@@ -623,6 +627,7 @@
 				4F3D69501D1F36D800E753D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F3D69511D1F36D800E753D6 /* Build configuration list for PBXNativeTarget "LoadItTests" */ = {
 			isa = XCConfigurationList;
@@ -631,6 +636,7 @@
 				4F3D69531D1F36D800E753D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F3D69671D1F374E00E753D6 /* Build configuration list for PBXNativeTarget "LoadItExample" */ = {
 			isa = XCConfigurationList;
@@ -639,6 +645,7 @@
 				4F3D69691D1F374E00E753D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

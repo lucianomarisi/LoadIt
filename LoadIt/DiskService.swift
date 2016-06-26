@@ -29,7 +29,7 @@ public struct DiskService<ResourceType: DiskResource> {
     completion(resultFrom(resource: resource))
   }
   
-  func resultFrom(resource resource: ResourceType) -> Result<ResourceType.ModelType>{
+  private func resultFrom(resource resource: ResourceType) -> Result<ResourceType.ModelType>{
     guard let url = bundle.URLForResource(resource.filename, withExtension: "json") else {
       return.Failure(DiskServiceError.FileNotFound)
     }

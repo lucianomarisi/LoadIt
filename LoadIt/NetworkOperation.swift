@@ -8,23 +8,13 @@
 
 import Foundation
 
-public protocol ResourceOperation: class {
-  associatedtype ResourceType: JSONResource
-  var resource: ResourceType { get }
-  func finishedWithResult(result: Result<ResourceType.ModelType>)
-}
-
 public protocol NetworkOperation: ResourceOperation {
   associatedtype ResourceType: NetworkResource
   var networkService: NetworkService<ResourceType> { get }
 }
 
-public protocol CancellableFinishableOperation {
-   var cancelled: Bool { get }
-   func finish()
-}
 
-public extension NetworkOperation where Self: CancellableFinishableOperation {
+public extension NetworkOperation {
   
   public func fetchResource() {
     if cancelled { return }
@@ -41,3 +31,4 @@ public extension NetworkOperation where Self: CancellableFinishableOperation {
   }
   
 }
+

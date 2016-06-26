@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BaseOperation: NSOperation, CancellableFinishableOperation {
+public class BaseOperation: NSOperation {
   
   public override var asynchronous: Bool {
     get{
@@ -39,7 +39,7 @@ public class BaseOperation: NSOperation, CancellableFinishableOperation {
   }
   
   private var _cancelled: Bool = false
-  private var newCancelled: Bool {
+  public override var cancelled: Bool {
     get { return _cancelled }
     set {
       willChangeValueForKey("isCancelled")
@@ -54,14 +54,16 @@ public class BaseOperation: NSOperation, CancellableFinishableOperation {
   }
   
   public final override func main() {
-    if newCancelled {
+    if cancelled {
       executing = false
       finished = true
       return
     }
+    execute()
   }
   
   public func execute() {
+    assertionFailure("execute must overriden")
     finish()
   }
   
@@ -72,7 +74,7 @@ public class BaseOperation: NSOperation, CancellableFinishableOperation {
   
   public final override func cancel() {
     super.cancel()
-    newCancelled = true
+    cancelled = true
     if executing {
       executing = false
       finished = true

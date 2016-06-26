@@ -15,12 +15,13 @@ protocol PlacesNetworkOperationDelegate: class {
 
 final class PlacesNetworkOperation: BaseOperation, NetworkOperation {
   
-  let networkService = NetworkService<PlacesResource>()
+  let networkService: NetworkService<PlacesResource>
   let resource: PlacesResource
   private weak var delegate: PlacesNetworkOperationDelegate?
     
-  init(continent: String, delegate: PlacesNetworkOperationDelegate) {
+  init(continent: String, networkService: NetworkService<PlacesResource> = NetworkService<PlacesResource>(), delegate: PlacesNetworkOperationDelegate) {
     self.resource = PlacesResource(continent: continent)
+    self.networkService = networkService
     self.delegate = delegate
     super.init()
   }
