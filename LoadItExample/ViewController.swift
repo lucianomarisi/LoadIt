@@ -15,35 +15,34 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()    
-    let placesNetworkJSONOperation = PlacesNetworkJSONOperation(continent: "europe", delegate: self)
-    operationQueue.addOperation(placesNetworkJSONOperation)
-//    placesNetworkJSONOperation.cancel()
+    let citiesNetworkJSONOperation = CitiesNetworkJSONOperation(continent: "america", delegate: self)
+    operationQueue.addOperation(citiesNetworkJSONOperation)
+//    citiesNetworkJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
     
-    let placesDiskJSONOperation = PlacesDiskJSONOperation(continent: "asia", delegate: self)
-    operationQueue.addOperation(placesDiskJSONOperation)
-//    placesDiskJSONOperation.cancel()
-
+    let citiesDiskJSONOperation = CitiesDiskJSONOperation(continent: "asia", delegate: self)
+    operationQueue.addOperation(citiesDiskJSONOperation)
+//    citiesDiskJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
 
     
-    let placesResource = PlacesResource(continent: "america")
+    let citiesResource = CitiesResource(continent: "europe")
     
-    let diskJSONService = DiskJSONService<PlacesResource>()
-    diskJSONService.fetch(resource: placesResource) {[weak self] result in
+    let diskJSONService = DiskJSONService<CitiesResource>()
+    diskJSONService.fetch(resource: citiesResource) {[weak self] result in
       self?.log(result: result)
     }
     
-    let networkJSONService = NetworkJSONService<PlacesResource>()
-    networkJSONService.fetch(resource: placesResource) { [weak self] result in
+    let networkJSONService = NetworkJSONService<CitiesResource>()
+    networkJSONService.fetch(resource: citiesResource) { [weak self] result in
       self?.log(result: result)
     }
     
   }
     
-  func log(result result: Result<[Place]>) {
-    if case .Success(let places) = result {
-      print(places)
+  func log(result result: Result<[City]>) {
+    if case .Success(let cities) = result {
+      print(cities)
     } else {
       print(result)
     }
@@ -51,16 +50,16 @@ class ViewController: UIViewController {
   
 }
 
-extension ViewController: PlacesNetworkJSONOperationDelegate {
-  func placesOperationDidFinish(operation: PlacesNetworkJSONOperation, result: Result<[Place]>) {
+extension ViewController: CitiesNetworkJSONOperationDelegate {
+  func citiesOperationDidFinish(operation: CitiesNetworkJSONOperation, result: Result<[City]>) {
     if operation.cancelled { return }
     log(result: result)
   }
 }
 
-extension ViewController: PlacesDiskJSONOperationDelegate {
+extension ViewController: CitiesDiskJSONOperationDelegate {
   
-  func placesOperationDidFinish(operation: PlacesDiskJSONOperation, result: Result<[Place]>) {
+  func citiesOperationDidFinish(operation: CitiesDiskJSONOperation, result: Result<[City]>) {
     if operation.cancelled { return }
     log(result: result)
   }

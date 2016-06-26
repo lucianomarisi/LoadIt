@@ -1,5 +1,5 @@
 //
-//  Place.swift
+//  City.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Place {
+struct City {
   let name: String
 }
 
-extension Place {
+extension City {
   init?(jsonDictionary: [String : AnyObject]) {
     guard let parsedName = jsonDictionary["name"] as? String else {
       return nil

@@ -1,5 +1,5 @@
 //
-//  PlacesResource.swift
+//  CitiesResource.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -11,7 +11,7 @@ import LoadIt
 
 private let baseURL = NSURL(string: "http://localhost:8000/")!
 
-struct PlacesResource: NetworkJSONResource, DiskJSONResource {
+struct CitiesResource: NetworkJSONResource, DiskJSONResource {
   let url: NSURL
   let filename: String
   
@@ -20,13 +20,13 @@ struct PlacesResource: NetworkJSONResource, DiskJSONResource {
     filename = continent
   }
   
-  func modelFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> [Place]? {
+  func modelFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> [City]? {
     guard let
-      placesJSONArray: [[String: AnyObject]] = jsonDictionary["places"] as? [[String: AnyObject]]
+      citiesJSONArray: [[String: AnyObject]] = jsonDictionary["cities"] as? [[String: AnyObject]]
       else {
         return []
     }
-    return placesJSONArray.flatMap(Place.init)
+    return citiesJSONArray.flatMap(City.init)
   }
   
 }
