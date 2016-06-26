@@ -20,9 +20,9 @@ struct PlacesResource: NetworkResource, DiskResource {
     filename = continent
   }
   
-  func modelFrom(jsonDictionary jsonDictionary: JSONDictionary) -> [Place]? {
+  func modelFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> [Place]? {
     guard let
-      placesJSONArray: [JSONDictionary] = jsonDictionary.jsonKey("places")
+      placesJSONArray: [[String: AnyObject]] = jsonDictionary["places"] as? [[String: AnyObject]]
       else {
         return []
     }

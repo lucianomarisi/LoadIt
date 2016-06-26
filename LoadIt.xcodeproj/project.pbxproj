@@ -18,11 +18,6 @@
 		4F3D69601D1F374E00E753D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D695E1D1F374E00E753D6 /* Main.storyboard */; };
 		4F3D69621D1F374E00E753D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69611D1F374E00E753D6 /* Assets.xcassets */; };
 		4F3D69651D1F374E00E753D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */; };
-		4F3D69701D1F384A00E753D6 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696B1D1F384A00E753D6 /* Decodable.swift */; };
-		4F3D69711D1F384A00E753D6 /* Dictionary+JSONKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696C1D1F384A00E753D6 /* Dictionary+JSONKey.swift */; };
-		4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696D1D1F384A00E753D6 /* Errors.swift */; };
-		4F3D69731D1F384A00E753D6 /* JSONFileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */; };
-		4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D696F1D1F384A00E753D6 /* Transformable.swift */; };
 		4F3D69781D1F38BB00E753D6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69771D1F38BB00E753D6 /* Place.swift */; };
 		4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResource.swift */; };
 		4F3D697B1D1F39CF00E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
@@ -68,11 +63,6 @@
 		4F3D69611D1F374E00E753D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3D69641D1F374E00E753D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F3D69661D1F374E00E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F3D696B1D1F384A00E753D6 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
-		4F3D696C1D1F384A00E753D6 /* Dictionary+JSONKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+JSONKey.swift"; sourceTree = "<group>"; };
-		4F3D696D1D1F384A00E753D6 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileLoading.swift; sourceTree = "<group>"; };
-		4F3D696F1D1F384A00E753D6 /* Transformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
 		4F3D69771D1F38BB00E753D6 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		4F3D69791D1F39A700E753D6 /* JSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResource.swift; sourceTree = "<group>"; };
 		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -184,7 +174,6 @@
 		4F3D69591D1F374E00E753D6 /* LoadItExample */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D696A1D1F384A00E753D6 /* JSONUtilities */,
 				4F196F5A1D2001FD0030101A /* Models */,
 				4F196F591D2001EF0030101A /* Operations */,
 				4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */,
@@ -197,18 +186,6 @@
 				4F3D699B1D1F426500E753D6 /* asia.json */,
 			);
 			path = LoadItExample;
-			sourceTree = "<group>";
-		};
-		4F3D696A1D1F384A00E753D6 /* JSONUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				4F3D696B1D1F384A00E753D6 /* Decodable.swift */,
-				4F3D696C1D1F384A00E753D6 /* Dictionary+JSONKey.swift */,
-				4F3D696D1D1F384A00E753D6 /* Errors.swift */,
-				4F3D696E1D1F384A00E753D6 /* JSONFileLoading.swift */,
-				4F3D696F1D1F384A00E753D6 /* Transformable.swift */,
-			);
-			path = JSONUtilities;
 			sourceTree = "<group>";
 		};
 		4F3D69951D1F3E6400E753D6 /* Resources */ = {
@@ -411,18 +388,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3D69731D1F384A00E753D6 /* JSONFileLoading.swift in Sources */,
 				4F3D69831D1F3B1D00E753D6 /* PlacesResource.swift in Sources */,
 				4F3D69851D1F3B4100E753D6 /* PlacesDiskOperation.swift in Sources */,
-				4F3D69701D1F384A00E753D6 /* Decodable.swift in Sources */,
-				4F3D69721D1F384A00E753D6 /* Errors.swift in Sources */,
-				4F3D69741D1F384A00E753D6 /* Transformable.swift in Sources */,
 				4F196F581D2001CC0030101A /* BaseOperation.swift in Sources */,
 				4F3D69871D1F3B7900E753D6 /* PlacesNetworkOperation.swift in Sources */,
 				4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */,
 				4F3D695B1D1F374E00E753D6 /* AppDelegate.swift in Sources */,
 				4F3D69781D1F38BB00E753D6 /* Place.swift in Sources */,
-				4F3D69711D1F384A00E753D6 /* Dictionary+JSONKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,11 +13,10 @@ struct Place {
 }
 
 extension Place {
-  init?(jsonDictionary: JSONDictionary) {
-    do {
-      name = try jsonDictionary.jsonKey("name")
-    } catch {
+  init?(jsonDictionary: [String : AnyObject]) {
+    guard let parsedName = jsonDictionary["name"] as? String else {
       return nil
     }
+    name = parsedName
   }
 }
