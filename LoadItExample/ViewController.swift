@@ -15,24 +15,27 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()    
-    let placesNetworkOperation = PlacesNetworkOperation(continent: "europe", delegate: self)
-    operationQueue.addOperation(placesNetworkOperation)
+    let placesNetworkJSONOperation = PlacesNetworkJSONOperation(continent: "europe", delegate: self)
+    operationQueue.addOperation(placesNetworkJSONOperation)
+//    placesNetworkJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
     
-    let placesDiskOperation = PlacesDiskOperation(continent: "asia", delegate: self)
-    operationQueue.addOperation(placesDiskOperation)
+    let placesDiskJSONOperation = PlacesDiskJSONOperation(continent: "asia", delegate: self)
+    operationQueue.addOperation(placesDiskJSONOperation)
+//    placesDiskJSONOperation.cancel()
+
 //    operationQueue.cancelAllOperations()
 
     
     let placesResource = PlacesResource(continent: "america")
     
-    let diskService = DiskService<PlacesResource>()
-    diskService.fetchResource(placesResource) {[weak self] result in
+    let diskJSONService = DiskJSONService<PlacesResource>()
+    diskJSONService.fetchResource(placesResource) {[weak self] result in
       self?.log(result: result)
     }
     
-    let networkService = NetworkService<PlacesResource>()
-    networkService.fetchResource(placesResource) { [weak self] result in
+    let networkJSONService = NetworkJSONService<PlacesResource>()
+    networkJSONService.fetchResource(placesResource) { [weak self] result in
       self?.log(result: result)
     }
     
@@ -48,16 +51,16 @@ class ViewController: UIViewController {
   
 }
 
-extension ViewController: PlacesNetworkOperationDelegate {
-  func placesOperationDidFinish(operation: PlacesNetworkOperation, result: Result<[Place]>) {
+extension ViewController: PlacesNetworkJSONOperationDelegate {
+  func placesOperationDidFinish(operation: PlacesNetworkJSONOperation, result: Result<[Place]>) {
     if operation.cancelled { return }
     log(result: result)
   }
 }
 
-extension ViewController: PlacesDiskOperationDelegate {
+extension ViewController: PlacesDiskJSONOperationDelegate {
   
-  func placesOperationDidFinish(operation: PlacesDiskOperation, result: Result<[Place]>) {
+  func placesOperationDidFinish(operation: PlacesDiskJSONOperation, result: Result<[Place]>) {
     if operation.cancelled { return }
     log(result: result)
   }

@@ -1,5 +1,5 @@
 //
-//  NetworkResource.swift
+//  NetworkJSONResource.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,22 +8,22 @@
 
 import Foundation
 
-public protocol NetworkResource: JSONResource {
+public protocol NetworkJSONResource: JSONResource {
   var url: NSURL { get }
   var HTTPMethod: String { get }
   var allHTTPHeaderFields: [String: String]? { get }
   var JSONBody: AnyObject? { get }
 }
 
-// MARK: - NetworkResource defaults
-extension NetworkResource {
+// MARK: - NetworkJSONResource defaults
+extension NetworkJSONResource {
   public var HTTPMethod: String { return "GET" }
   public var allHTTPHeaderFields: [String: String]? { return nil }
   public var JSONBody: AnyObject? { return nil }
 }
 
 // MARK: - Request building
-extension NetworkResource {
+extension NetworkJSONResource {
   func urlRequest() -> NSMutableURLRequest {
     let request = NSMutableURLRequest(URL: url)
     request.allHTTPHeaderFields = allHTTPHeaderFields

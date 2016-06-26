@@ -1,5 +1,5 @@
 //
-//  DiskResource.swift
+//  DiskJSONResource.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol DiskResource: JSONResource {
+public protocol DiskJSONResource: JSONResource {
   var filename: String { get }
 }

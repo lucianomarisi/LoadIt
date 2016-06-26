@@ -1,5 +1,5 @@
 //
-//  NetworkOperation.swift
+//  NetworkJSONOperation.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-public protocol NetworkOperation: ResourceOperation {
-  associatedtype ResourceType: NetworkResource
-  var networkService: NetworkService<ResourceType> { get }
+public protocol NetworkJSONOperation: ResourceOperation {
+  associatedtype ResourceType: NetworkJSONResource
+  var networkJSONService: NetworkJSONService<ResourceType> { get }
 }
 
-public extension NetworkOperation {
+public extension NetworkJSONOperation {
   
   public func fetchResource() {
     if cancelled { return }
-    networkService.fetchResource(resource) { [weak self] (result) in
+    networkJSONService.fetchResource(resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
       if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in

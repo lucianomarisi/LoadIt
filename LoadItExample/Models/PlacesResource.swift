@@ -11,7 +11,7 @@ import LoadIt
 
 private let baseURL = NSURL(string: "http://localhost:8000/")!
 
-struct PlacesResource: NetworkResource, DiskResource {
+struct PlacesResource: NetworkJSONResource, DiskJSONResource {
   let url: NSURL
   let filename: String
   

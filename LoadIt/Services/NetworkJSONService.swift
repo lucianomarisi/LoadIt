@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  NetworkJSONService.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum NetworkServiceError: ErrorType {
+enum NetworkJSONServiceError: ErrorType {
   case NetworkingError(error: NSError)
   case NoData
 }
 
-public struct NetworkService<ResourceType: NetworkResource> {
+public struct NetworkJSONService<ResourceType: NetworkJSONResource> {
   
   private let session: Session
   
@@ -36,11 +36,11 @@ public struct NetworkService<ResourceType: NetworkResource> {
   
   private func resultFrom(resource resource: ResourceType, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<ResourceType.ModelType> {
     if let error = error {
-      return .Failure(NetworkServiceError.NetworkingError(error: error))
+      return .Failure(NetworkJSONServiceError.NetworkingError(error: error))
     }
     
     guard let data = data else {
-      return .Failure(NetworkServiceError.NoData)
+      return .Failure(NetworkJSONServiceError.NoData)
     }
     
     return resource.resultFrom(data: data)

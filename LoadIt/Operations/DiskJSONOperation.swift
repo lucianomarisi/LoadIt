@@ -1,5 +1,5 @@
 //
-//  DiskOperation.swift
+//  DiskJSONOperation.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-public protocol DiskOperation: ResourceOperation {
-  associatedtype ResourceType: DiskResource
-  var diskService: DiskService<ResourceType> { get }
+public protocol DiskJSONOperation: ResourceOperation {
+  associatedtype ResourceType: DiskJSONResource
+  var diskJSONService: DiskJSONService<ResourceType> { get }
 }
 
-public extension DiskOperation {
+public extension DiskJSONOperation {
   
   public func fetchResource() {
     if cancelled { return }
-    diskService.fetchResource(resource) { [weak self] (result) in
+    diskJSONService.fetchResource(resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
       if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in

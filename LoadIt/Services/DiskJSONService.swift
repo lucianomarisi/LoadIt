@@ -1,5 +1,5 @@
 //
-//  DiskService.swift
+//  DiskJSONService.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum DiskServiceError: ErrorType {
-  case NoData
+enum DiskJSONServiceError: ErrorType {
   case FileNotFound
+  case NoData
 }
 
-public struct DiskService<ResourceType: DiskResource> {
+public struct DiskJSONService<ResourceType: DiskJSONResource> {
   
   private let bundle: Bundle
   
@@ -31,11 +31,11 @@ public struct DiskService<ResourceType: DiskResource> {
   
   private func resultFrom(resource resource: ResourceType) -> Result<ResourceType.ModelType>{
     guard let url = bundle.URLForResource(resource.filename, withExtension: "json") else {
-      return.Failure(DiskServiceError.FileNotFound)
+      return.Failure(DiskJSONServiceError.FileNotFound)
     }
     
     guard let data = NSData(contentsOfURL: url) else {
-      return.Failure(DiskServiceError.NoData)
+      return.Failure(DiskJSONServiceError.NoData)
     }
     
     return resource.resultFrom(data: data)
