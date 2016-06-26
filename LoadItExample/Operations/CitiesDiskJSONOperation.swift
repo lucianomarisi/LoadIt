@@ -30,7 +30,7 @@ final class CitiesDiskJSONOperation: BaseOperation, DiskJSONOperation {
     fetchResource()
   }
   
-  func finishedWithResult(result: Result<[City]>) {
+  func finished(result result: Result<[City]>) {
     self.delegate?.citiesOperationDidFinish(self, result: result)
   }
   

@@ -19,5 +19,5 @@ public protocol Finishable: class {
 public protocol ResourceOperation: Cancellable, Finishable {
   associatedtype ResourceType: Resource
   var resource: ResourceType { get }
-  func finishedWithResult(result: Result<ResourceType.ModelType>)
+  func finished(result result: Result<ResourceType.ModelType>)
 }
