@@ -18,7 +18,7 @@ struct MockJSONService: ResourceServiceType {
   
 }
 
-private typealias CitiesCommonResourceOperation = CommonResourceOperation<DiskJSONService<CitiesResource>>
+private typealias CitiesCommon2ResourceOperation = ResourceOperation<DiskJSONService<CitiesResource>>
 
 class ViewController: UIViewController {
 
@@ -37,12 +37,12 @@ class ViewController: UIViewController {
     let citiesDiskJSONOperation = CitiesDiskResourceOperation(resource: asiaResource, delegate: self)
     operationQueue.addOperation(citiesDiskJSONOperation)
 
-    let citiesCommonResourceOperation = CitiesCommonResourceOperation(resource: asiaResource)
-    citiesCommonResourceOperation.didFinishFetchingResourceCallback = { [weak self] operation, result in
+    let citiesResourceOperation = CitiesCommon2ResourceOperation(resource: asiaResource) { [weak self] operation, result in
       if operation.cancelled { return }
       self?.log(result: result)
     }
-    operationQueue.addOperation(citiesCommonResourceOperation)
+    
+    operationQueue.addOperation(citiesResourceOperation)
 
     let mockService = MockJSONService()
     let mockCitiesResourceOperation = CitiesResourceOperation<MockJSONService>(resource: asiaResource, service: mockService, delegate: self)
