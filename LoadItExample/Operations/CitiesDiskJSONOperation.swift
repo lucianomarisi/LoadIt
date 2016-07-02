@@ -1,5 +1,5 @@
 //
-//  CitiesDiskJSONOperation.swift
+//  CitiesResourceOperation.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -9,20 +9,23 @@
 import Foundation
 import LoadIt
 
-protocol CitiesDiskJSONOperationDelegate: class {
+typealias CitiesDiskResourceOperation = CitiesResourceOperation<DiskJSONService<CitiesResource>>
+
+protocol CitiesResourceOperationDelegate: class {
   func citiesOperationDidFinish(result result: Result<[City]>)
 }
 
-final class CitiesDiskJSONOperation<ResourceServiceType: ResourceService where ResourceServiceType.ResourceType == CitiesResource>: BaseOperation, ResourceOperation {
+final class CitiesResourceOperation<ResourceServiceType: ResourceService where ResourceServiceType.ResourceType == CitiesResource>: BaseOperation, ResourceOperation {
   
   typealias ResourceType = CitiesResource
   
   private let resource: CitiesResource
   private let service: ResourceServiceType
-  private weak var delegate: CitiesDiskJSONOperationDelegate?
+  private weak var delegate: CitiesResourceOperationDelegate?
 
-//  init(resource: CitiesResource, service: ResourceServiceType = DiskJSONService<CitiesResource>(), delegate: CitiesDiskJSONOperationDelegate) {
-  init(resource: CitiesResource, service: ResourceServiceType, delegate: CitiesDiskJSONOperationDelegate) {
+  var didFinishFetchingResourceCallback: ((CitiesResourceOperation<ResourceServiceType>, Result<[City]>) -> Void)?
+  
+  init(resource: CitiesResource, service: ResourceServiceType = ResourceServiceType(), delegate: CitiesResourceOperationDelegate) {
     self.resource = resource
     self.service = service
     self.delegate = delegate
@@ -38,3 +41,4 @@ final class CitiesDiskJSONOperation<ResourceServiceType: ResourceService where R
   }
   
 }
+

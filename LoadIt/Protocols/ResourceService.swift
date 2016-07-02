@@ -10,6 +10,12 @@ import Foundation
 
 public protocol ResourceService {
   associatedtype ResourceType: Resource
+  
+  /**
+   Designated initialzer for constructing a ResourceService
+   */
+  init()
+  
   /**
    Fetch the resource
    
