@@ -66,7 +66,7 @@
 		4F3D69661D1F374E00E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3D69771D1F38BB00E753D6 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4F3D69791D1F39A700E753D6 /* JSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResource.swift; sourceTree = "<group>"; };
-		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = ../Result.swift; sourceTree = "<group>"; };
+		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4F3D697E1D1F3AB700E753D6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		4F3D69801D1F3B0400E753D6 /* DiskJSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONResource.swift; sourceTree = "<group>"; };
 		4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesResource.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		4F3D69981D1F3EB900E753D6 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		4F3D699A1D1F426500E753D6 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
 		4F3D699B1D1F426500E753D6 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
-		4F6F433F1D280C1F00501353 /* ResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceService.swift; path = ../Services/ResourceService.swift; sourceTree = "<group>"; };
+		4F6F433F1D280C1F00501353 /* ResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +122,8 @@
 		4F196F5A1D2001FD0030101A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69771D1F38BB00E753D6 /* City.swift */,
 				4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */,
+				4F3D69771D1F38BB00E753D6 /* City.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,11 +151,11 @@
 		4F3D693C1D1F36D700E753D6 /* LoadIt */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69961D1F3E6F00E753D6 /* Protocols */,
 				4F3D69971D1F3E7C00E753D6 /* Convenience Types */,
+				4F3D69961D1F3E6F00E753D6 /* Protocols */,
+				4F6F43411D280F2100501353 /* Utilities */,
 				4F3D693F1D1F36D700E753D6 /* Info.plist */,
 				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
-				4F6F43411D280F2100501353 /* Utilities */,
 			);
 			path = LoadIt;
 			sourceTree = "<group>";
@@ -190,36 +190,33 @@
 		4F3D69951D1F3E6400E753D6 /* Resources Definitions */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
 				4F3D69801D1F3B0400E753D6 /* DiskJSONResource.swift */,
+				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
 				4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResource.swift */,
 			);
-			name = "Resources Definitions";
-			path = ../Resources;
+			path = "Resources Definitions";
 			sourceTree = "<group>";
 		};
 		4F3D69961D1F3E6F00E753D6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				4F3D69951D1F3E6400E753D6 /* Resources Definitions */,
 				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
 				4F6F433F1D280C1F00501353 /* ResourceService.swift */,
-				4F3D69951D1F3E6400E753D6 /* Resources Definitions */,
 			);
-			name = Protocols;
-			path = Operations;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		4F3D69971D1F3E7C00E753D6 /* Convenience Types */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
 				4F3D69981D1F3EB900E753D6 /* Bundle.swift */,
 				4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */,
 				4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */,
+				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
 				4F3D697E1D1F3AB700E753D6 /* Session.swift */,
 			);
-			name = "Convenience Types";
-			path = Services;
+			path = "Convenience Types";
 			sourceTree = "<group>";
 		};
 		4F6F43411D280F2100501353 /* Utilities */ = {
@@ -227,7 +224,7 @@
 			children = (
 				4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */,
 			);
-			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
