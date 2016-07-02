@@ -25,7 +25,7 @@ public struct NetworkJSONService<Resource: NetworkJSONResourceType> {
     self.session = session
   }
   
-  private func resultFrom(resource resource: Resource, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<Resource.ModelType> {
+  private func resultFrom(resource resource: Resource, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<Resource.Model> {
     if let error = error {
       return .Failure(NetworkJSONServiceError.NetworkingError(error: error))
     }
@@ -42,7 +42,7 @@ public struct NetworkJSONService<Resource: NetworkJSONResourceType> {
 // MARK: - ResourceServiceType
 extension NetworkJSONService: ResourceServiceType {
   
-  public func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void) {
+  public func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
     let urlRequest = resource.urlRequest()
     
     session.performRequest(urlRequest) { (data, _, error) in

@@ -22,5 +22,5 @@ public protocol ResourceServiceType {
    - parameter resource:   The resource to fetch
    - parameter completion: A completion handler called with a Result type of the fetching computation
    */
-  func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void)
+  func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void)
 }

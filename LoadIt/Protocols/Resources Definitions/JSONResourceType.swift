@@ -9,19 +9,19 @@
 import Foundation
 
 public protocol ResourceType {
-  associatedtype ModelType
+  associatedtype Model
 }
 
 public protocol JSONResourceType: ResourceType {
-  associatedtype ModelType // Not sure why this needs redeclaring to keep the Swift compiler happy
-  func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> ModelType?
-  func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType?
+  associatedtype Model // Not sure why this needs redeclaring to keep the Swift compiler happy
+  func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> Model?
+  func modelFrom(jsonArray jsonArray: [AnyObject]) -> Model?
 }
 
 // MARK: - Parsing defaults
 extension JSONResourceType {
-  public func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> ModelType? { return nil }
-  public func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType? { return nil }
+  public func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> Model? { return nil }
+  public func modelFrom(jsonArray jsonArray: [AnyObject]) -> Model? { return nil }
 }
 
 enum ParsingError: ErrorType {
@@ -34,7 +34,7 @@ enum ParsingError: ErrorType {
 // MARK: - Convenince parsing functions
 extension JSONResourceType {
   
-  func resultFrom(data data: NSData) -> Result<ModelType> {
+  func resultFrom(data data: NSData) -> Result<Model> {
     guard let jsonObject = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) else {
       return .Failure(ParsingError.InvalidJSONData)
     }
@@ -51,7 +51,7 @@ extension JSONResourceType {
     return .Failure(ParsingError.UnsupportedType)
   }
   
-  private func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<ModelType> {
+  private func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<Model> {
     if let parsedResults = modelFrom(jsonDictionary: jsonDictionary) {
       return .Success(parsedResults)
     } else {
@@ -59,7 +59,7 @@ extension JSONResourceType {
     }
   }
   
-  private func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<ModelType> {
+  private func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<Model> {
     if let parsedResults = modelFrom(jsonArray: jsonArray) {
       return .Success(parsedResults)
     } else {

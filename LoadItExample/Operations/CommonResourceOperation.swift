@@ -16,7 +16,7 @@ final class CommonResourceOperation<ResourceService: ResourceServiceType>: BaseO
   private let resource: Resource
   private let service: ResourceService
   
-  var didFinishFetchingResourceCallback: ((CommonResourceOperation<ResourceService>, Result<Resource.ModelType>) -> Void)?
+  var didFinishFetchingResourceCallback: ((CommonResourceOperation<ResourceService>, Result<Resource.Model>) -> Void)?
   
   init(resource: ResourceService.Resource, service: ResourceService = ResourceService()) {
     self.resource = resource
@@ -28,7 +28,7 @@ final class CommonResourceOperation<ResourceService: ResourceServiceType>: BaseO
     fetch(resource: resource, usingService: service)
   }
   
-  func didFinishFetchingResource(result result: Result<Resource.ModelType>) {
+  func didFinishFetchingResource(result result: Result<Resource.Model>) {
     didFinishFetchingResourceCallback?(self, result)
   }
   

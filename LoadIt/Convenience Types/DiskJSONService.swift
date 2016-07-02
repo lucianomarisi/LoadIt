@@ -25,7 +25,7 @@ public struct DiskJSONService<Resource: DiskJSONResourceType> {
     self.bundle = bundle
   }
   
-  private func resultFrom(resource resource: Resource) -> Result<Resource.ModelType>{
+  private func resultFrom(resource resource: Resource) -> Result<Resource.Model>{
     guard let url = bundle.URLForResource(resource.filename, withExtension: "json") else {
       return.Failure(DiskJSONServiceError.FileNotFound)
     }
@@ -41,7 +41,7 @@ public struct DiskJSONService<Resource: DiskJSONResourceType> {
 // MARK: - ResourceServiceType
 extension DiskJSONService: ResourceServiceType {
   
-  public func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void) {
+  public func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
     completion(resultFrom(resource: resource))
   }
   
