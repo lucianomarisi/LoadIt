@@ -12,12 +12,12 @@ public protocol ResourceServiceType {
   associatedtype Resource: ResourceType
   
   /**
-   Designated initialzer for constructing a ResourceService
+   Designated initialzer for constructing a ResourceServiceType
    */
   init()
   
   /**
-   Fetch the resource
+   Fetch a resource
    
    - parameter resource:   The resource to fetch
    - parameter completion: A completion handler called with a Result type of the fetching computation

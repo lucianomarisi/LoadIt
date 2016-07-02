@@ -17,10 +17,6 @@ public struct NetworkJSONService<Resource: NetworkJSONResourceType> {
   
   private let session: URLSessionType
   
-  public init() {
-    self.init(session: NSURLSession.sharedSession())
-  }
-  
   init(session: URLSessionType) {
     self.session = session
   }
@@ -41,6 +37,10 @@ public struct NetworkJSONService<Resource: NetworkJSONResourceType> {
 
 // MARK: - ResourceServiceType
 extension NetworkJSONService: ResourceServiceType {
+  
+  public init() {
+    self.init(session: NSURLSession.sharedSession())
+  }
   
   public func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
     let urlRequest = resource.urlRequest()
