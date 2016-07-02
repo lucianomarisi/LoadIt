@@ -20,22 +20,22 @@
 		4F3D69621D1F374E00E753D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69611D1F374E00E753D6 /* Assets.xcassets */; };
 		4F3D69651D1F374E00E753D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */; };
 		4F3D69781D1F38BB00E753D6 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69771D1F38BB00E753D6 /* City.swift */; };
-		4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResource.swift */; };
+		4F3D697A1D1F39A700E753D6 /* JSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResourceType.swift */; };
 		4F3D697B1D1F39CF00E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697C1D1F3A6F00E753D6 /* Result.swift */; };
 		4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697E1D1F3AB700E753D6 /* Session.swift */; };
-		4F3D69811D1F3B0400E753D6 /* DiskJSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69801D1F3B0400E753D6 /* DiskJSONResource.swift */; };
+		4F3D69811D1F3B0400E753D6 /* DiskJSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */; };
 		4F3D69831D1F3B1D00E753D6 /* CitiesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */; };
 		4F3D69851D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69841D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift */; };
 		4F3D69871D1F3B7900E753D6 /* CitiesNetworkJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69861D1F3B7900E753D6 /* CitiesNetworkJSONOperation.swift */; };
 		4F3D69891D1F3BDB00E753D6 /* NetworkJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */; };
-		4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResource.swift */; };
+		4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift */; };
 		4F3D698D1D1F3CB500E753D6 /* DiskJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */; };
 		4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */; };
 		4F3D699C1D1F426500E753D6 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699A1D1F426500E753D6 /* america.json */; };
 		4F3D699D1D1F426500E753D6 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699B1D1F426500E753D6 /* asia.json */; };
 		4F6ED78F1D282B88009EA9E8 /* CommonResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ED78B1D282B4E009EA9E8 /* CommonResourceOperation.swift */; };
-		4F6F43401D280C1F00501353 /* ResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F433F1D280C1F00501353 /* ResourceService.swift */; };
+		4F6F43401D280C1F00501353 /* ResourceServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F433F1D280C1F00501353 /* ResourceServiceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,22 +66,22 @@
 		4F3D69641D1F374E00E753D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F3D69661D1F374E00E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3D69771D1F38BB00E753D6 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		4F3D69791D1F39A700E753D6 /* JSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResource.swift; sourceTree = "<group>"; };
+		4F3D69791D1F39A700E753D6 /* JSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4F3D697E1D1F3AB700E753D6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		4F3D69801D1F3B0400E753D6 /* DiskJSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONResource.swift; sourceTree = "<group>"; };
+		4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesResource.swift; sourceTree = "<group>"; };
 		4F3D69841D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDiskJSONOperation.swift; sourceTree = "<group>"; };
 		4F3D69861D1F3B7900E753D6 /* CitiesNetworkJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesNetworkJSONOperation.swift; sourceTree = "<group>"; };
 		4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONService.swift; sourceTree = "<group>"; };
-		4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONResource.swift; sourceTree = "<group>"; };
+		4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONService.swift; sourceTree = "<group>"; };
 		4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+Additions.swift"; sourceTree = "<group>"; };
 		4F3D69981D1F3EB900E753D6 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		4F3D699A1D1F426500E753D6 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
 		4F3D699B1D1F426500E753D6 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
 		4F6ED78B1D282B4E009EA9E8 /* CommonResourceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonResourceOperation.swift; sourceTree = "<group>"; };
-		4F6F433F1D280C1F00501353 /* ResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceService.swift; sourceTree = "<group>"; };
+		4F6F433F1D280C1F00501353 /* ResourceServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceServiceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +193,9 @@
 		4F3D69951D1F3E6400E753D6 /* Resources Definitions */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69801D1F3B0400E753D6 /* DiskJSONResource.swift */,
-				4F3D69791D1F39A700E753D6 /* JSONResource.swift */,
-				4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResource.swift */,
+				4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */,
+				4F3D69791D1F39A700E753D6 /* JSONResourceType.swift */,
+				4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift */,
 			);
 			path = "Resources Definitions";
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 			children = (
 				4F3D69951D1F3E6400E753D6 /* Resources Definitions */,
 				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
-				4F6F433F1D280C1F00501353 /* ResourceService.swift */,
+				4F6F433F1D280C1F00501353 /* ResourceServiceType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -376,13 +376,13 @@
 				4F3D69891D1F3BDB00E753D6 /* NetworkJSONService.swift in Sources */,
 				4F196F5B1D20022D0030101A /* Bundle.swift in Sources */,
 				4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */,
-				4F3D69811D1F3B0400E753D6 /* DiskJSONResource.swift in Sources */,
+				4F3D69811D1F3B0400E753D6 /* DiskJSONResourceType.swift in Sources */,
 				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
-				4F3D697A1D1F39A700E753D6 /* JSONResource.swift in Sources */,
+				4F3D697A1D1F39A700E753D6 /* JSONResourceType.swift in Sources */,
 				4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */,
 				4F3D698D1D1F3CB500E753D6 /* DiskJSONService.swift in Sources */,
-				4F6F43401D280C1F00501353 /* ResourceService.swift in Sources */,
-				4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResource.swift in Sources */,
+				4F6F43401D280C1F00501353 /* ResourceServiceType.swift in Sources */,
+				4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift in Sources */,
 				4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
