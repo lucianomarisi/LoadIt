@@ -9,16 +9,22 @@
 import UIKit
 import LoadIt
 
-struct MockJSONService: ResourceServiceType {
+struct MockResource: ResourceType {
+  typealias Model = String
+}
+
+struct MockService: ResourceServiceType {
+  typealias Resource = MockResource
   
-  func fetch(resource resource: CitiesResource, completion: (Result<[City]>) -> Void) {
-    let cities = [City(name: "Mock city")]
-    completion(Result.Success(cities))
+  func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
+    completion(Result.Success("Mock result"))
   }
   
 }
 
-private typealias CitiesCommon2ResourceOperation = ResourceOperation<DiskJSONService<CitiesResource>>
+private typealias CitiesNetworkResourceOperation = ResourceOperation<NetworkJSONService<CitiesResource>>
+private typealias CitiesDiskResourceOperation = ResourceOperation<DiskJSONService<CitiesResource>>
+private typealias MockResourceOperation = ResourceOperation<MockService>
 
 class ViewController: UIViewController {
 
@@ -26,30 +32,32 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     let americaResource = CitiesResource(continent: "america")
-
-    let citiesNetworkJSONOperation = CitiesNetworkJSONOperation(resource: americaResource, delegate: self)
-    operationQueue.addOperation(citiesNetworkJSONOperation)
+    let citiesNetworkResourceOperation = CitiesNetworkResourceOperation(resource: americaResource) { [weak self] operation, result in
+      if operation.cancelled { return }
+      self?.log(result: result)
+    }
+    operationQueue.addOperation(citiesNetworkResourceOperation)
 //    citiesNetworkJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
     
     let asiaResource = CitiesResource(continent: "asia")
-    let citiesDiskJSONOperation = CitiesDiskResourceOperation(resource: asiaResource, delegate: self)
-    operationQueue.addOperation(citiesDiskJSONOperation)
-
-    let citiesResourceOperation = CitiesCommon2ResourceOperation(resource: asiaResource) { [weak self] operation, result in
+    let citiesResourceOperation = CitiesDiskResourceOperation(resource: asiaResource) { [weak self] operation, result in
       if operation.cancelled { return }
       self?.log(result: result)
     }
-    
     operationQueue.addOperation(citiesResourceOperation)
 
-    let mockService = MockJSONService()
-    let mockCitiesResourceOperation = CitiesResourceOperation<MockJSONService>(resource: asiaResource, service: mockService, delegate: self)
+    let mockResource = MockResource()
+    let mockService = MockService()
+    let mockCitiesResourceOperation = MockResourceOperation(resource: mockResource, service: mockService){ [weak self] operation, result in
+      if operation.cancelled { return }
+      self?.log(result: result)
+    }
+//    mockCitiesResourceOperation.execute()
+//    mockCitiesResourceOperation.cancel()
     operationQueue.addOperation(mockCitiesResourceOperation)
-
-//    citiesDiskJSONOperation.cancel()
-//    operationQueue.cancelAllOperations()
 
     
     let europeResource = CitiesResource(continent: "europe")
@@ -66,31 +74,12 @@ class ViewController: UIViewController {
     
   }
     
-  func log(result result: Result<[City]>) {
+  func log<T>(result result: Result<T>) {
     if case .Success(let cities) = result {
       print(cities)
     } else {
       print(result)
     }
   }
-  
-}
-
-extension ViewController: CitiesNetworkJSONOperationDelegate {
-  func citiesOperationDidFinish(operation: CitiesNetworkJSONOperation, result: Result<[City]>) {
-    if operation.cancelled { return }
-    log(result: result)
-  }
-}
-
-extension ViewController: CitiesResourceOperationDelegate {
-  
-  func citiesOperationDidFinish(result result: Result<[City]>) {
-    log(result: result)
-  }
-//  func citiesOperationDidFinish(result: Result<[City]>) {
-////    if operation.cancelled { return }
-//    log(result: result)
-//  }
   
 }
