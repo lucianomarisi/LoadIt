@@ -13,7 +13,7 @@ enum DiskJSONServiceError: ErrorType {
   case NoData
 }
 
-public struct DiskJSONService<ResourceType: DiskJSONResource>: ResourceService {
+public struct DiskJSONService<ResourceType: DiskJSONResource> {
   
   private let bundle: Bundle
   
@@ -23,10 +23,6 @@ public struct DiskJSONService<ResourceType: DiskJSONResource>: ResourceService {
   
   init(bundle: Bundle) {
     self.bundle = bundle
-  }
-  
-  public func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
-    completion(resultFrom(resource: resource))
   }
   
   private func resultFrom(resource resource: ResourceType) -> Result<ResourceType.ModelType>{
@@ -40,4 +36,13 @@ public struct DiskJSONService<ResourceType: DiskJSONResource>: ResourceService {
     
     return resource.resultFrom(data: data)
   }
+}
+
+// MARK: - ResourceService
+extension DiskJSONService: ResourceService {
+  
+  public func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
+    completion(resultFrom(resource: resource))
+  }
+  
 }

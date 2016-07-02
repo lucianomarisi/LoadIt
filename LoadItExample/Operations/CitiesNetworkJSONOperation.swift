@@ -31,7 +31,7 @@ final class CitiesNetworkJSONOperation: BaseOperation, ResourceOperation {
     fetchResource(service: networkJSONService)
   }
 
-  func didFinish(result result: Result<[City]>) {
+  func didFinishFetchingResource(result result: Result<[City]>) {
     self.delegate?.citiesOperationDidFinish(self, result: result)
   }
   

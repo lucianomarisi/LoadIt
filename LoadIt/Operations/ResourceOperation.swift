@@ -32,7 +32,7 @@ public protocol ResourceOperation: Cancellable, Finishable {
    
    - parameter result: The result of the operation
    */
-  func didFinish(result result: Result<ResourceType.ModelType>)
+  func didFinishFetchingResource(result result: Result<ResourceType.ModelType>)
 }
 
 public extension ResourceOperation {
@@ -45,7 +45,7 @@ public extension ResourceOperation {
       NSThread.executeOnMain { [weak self] in
         guard let strongSelf = self else { return }
         if strongSelf.cancelled { return }
-        strongSelf.didFinish(result: result)
+        strongSelf.didFinishFetchingResource(result: result)
         strongSelf.finish([])
       }
     }
