@@ -13,12 +13,13 @@ protocol CitiesNetworkJSONOperationDelegate: class {
   func citiesOperationDidFinish(operation: CitiesNetworkJSONOperation, result: Result<[City]>)
 }
 
-final class CitiesNetworkJSONOperation: BaseOperation, NetworkJSONOperation {
+final class CitiesNetworkJSONOperation: BaseOperation, ResourceOperation {
   
-  let networkJSONService: NetworkJSONService<CitiesResource>
   let resource: CitiesResource
+  
   private weak var delegate: CitiesNetworkJSONOperationDelegate?
-    
+  private let networkJSONService: NetworkJSONService<CitiesResource>
+  
   init(continent: String, networkJSONService: NetworkJSONService<CitiesResource> = NetworkJSONService<CitiesResource>(), delegate: CitiesNetworkJSONOperationDelegate) {
     self.resource = CitiesResource(continent: continent)
     self.networkJSONService = networkJSONService
@@ -27,7 +28,7 @@ final class CitiesNetworkJSONOperation: BaseOperation, NetworkJSONOperation {
   }
   
   override func execute() {
-    fetchResource()
+    fetchResource(service: networkJSONService)
   }
 
   func didFinish(result result: Result<[City]>) {

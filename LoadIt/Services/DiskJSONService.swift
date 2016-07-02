@@ -13,7 +13,7 @@ enum DiskJSONServiceError: ErrorType {
   case NoData
 }
 
-public struct DiskJSONService<ResourceType: DiskJSONResource> {
+public struct DiskJSONService<ResourceType: DiskJSONResource>: ResourceService {
   
   private let bundle: Bundle
   

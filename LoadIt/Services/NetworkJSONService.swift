@@ -13,7 +13,12 @@ enum NetworkJSONServiceError: ErrorType {
   case NoData
 }
 
-public struct NetworkJSONService<ResourceType: NetworkJSONResource> {
+public protocol ResourceService {
+  associatedtype ResourceType: Resource
+  func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void)
+}
+
+public struct NetworkJSONService<ResourceType: NetworkJSONResource>: ResourceService {
   
   private let session: Session
   

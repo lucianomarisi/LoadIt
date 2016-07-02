@@ -13,11 +13,11 @@ protocol CitiesDiskJSONOperationDelegate: class {
   func citiesOperationDidFinish(operation: CitiesDiskJSONOperation, result: Result<[City]>)
 }
 
-final class CitiesDiskJSONOperation: BaseOperation, DiskJSONOperation {
+final class CitiesDiskJSONOperation: BaseOperation, ResourceOperation {
   
-  let diskJSONService: DiskJSONService<CitiesResource>
   let resource: CitiesResource
   private weak var delegate: CitiesDiskJSONOperationDelegate?
+  private let diskJSONService: DiskJSONService<CitiesResource>
   
   init(continent: String, diskJSONService: DiskJSONService<CitiesResource> = DiskJSONService<CitiesResource>(), delegate: CitiesDiskJSONOperationDelegate) {
     self.resource = CitiesResource(continent: continent)
@@ -27,7 +27,7 @@ final class CitiesDiskJSONOperation: BaseOperation, DiskJSONOperation {
   }
   
   override func execute() {
-    fetchResource()
+    fetchResource(service: diskJSONService)
   }
   
   func didFinish(result result: Result<[City]>) {
