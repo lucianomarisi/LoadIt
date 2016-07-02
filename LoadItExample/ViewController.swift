@@ -33,12 +33,20 @@ class ViewController: UIViewController {
 //    operationQueue.cancelAllOperations()
     
     let asiaResource = CitiesResource(continent: "asia")
-//    let service = DiskJSONService<CitiesResource>()
     let citiesDiskJSONOperation = CitiesDiskResourceOperation(resource: asiaResource, delegate: self)
-
-//    let mockService = MockJSONService()
-//    let citiesDiskJSONOperation = CitiesResourceOperation<MockJSONService>(resource: asiaResource, service: mockService, delegate: self)
     operationQueue.addOperation(citiesDiskJSONOperation)
+
+    let citiesCommonResourceOperation = CitiesCommonResourceOperation(resource: asiaResource)
+    citiesCommonResourceOperation.didFinishFetchingResourceCallback = { [weak self] operation, result in
+      if operation.cancelled { return }
+      self?.log(result: result)
+    }
+    operationQueue.addOperation(citiesCommonResourceOperation)
+
+    let mockService = MockJSONService()
+    let mockCitiesResourceOperation = CitiesResourceOperation<MockJSONService>(resource: asiaResource, service: mockService, delegate: self)
+    operationQueue.addOperation(mockCitiesResourceOperation)
+
 //    citiesDiskJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
 

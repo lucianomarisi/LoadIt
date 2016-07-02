@@ -34,6 +34,7 @@
 		4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */; };
 		4F3D699C1D1F426500E753D6 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699A1D1F426500E753D6 /* america.json */; };
 		4F3D699D1D1F426500E753D6 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D699B1D1F426500E753D6 /* asia.json */; };
+		4F6ED78F1D282B88009EA9E8 /* CommonResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ED78B1D282B4E009EA9E8 /* CommonResourceOperation.swift */; };
 		4F6F43401D280C1F00501353 /* ResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F433F1D280C1F00501353 /* ResourceService.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		4F3D69981D1F3EB900E753D6 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		4F3D699A1D1F426500E753D6 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
 		4F3D699B1D1F426500E753D6 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
+		4F6ED78B1D282B4E009EA9E8 /* CommonResourceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonResourceOperation.swift; sourceTree = "<group>"; };
 		4F6F433F1D280C1F00501353 /* ResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4F196F571D2001CC0030101A /* BaseOperation.swift */,
+				4F6ED78B1D282B4E009EA9E8 /* CommonResourceOperation.swift */,
 				4F3D69841D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift */,
 				4F3D69861D1F3B7900E753D6 /* CitiesNetworkJSONOperation.swift */,
 			);
@@ -398,6 +401,7 @@
 			files = (
 				4F3D69831D1F3B1D00E753D6 /* CitiesResource.swift in Sources */,
 				4F3D69851D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift in Sources */,
+				4F6ED78F1D282B88009EA9E8 /* CommonResourceOperation.swift in Sources */,
 				4F196F581D2001CC0030101A /* BaseOperation.swift in Sources */,
 				4F3D69871D1F3B7900E753D6 /* CitiesNetworkJSONOperation.swift in Sources */,
 				4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */,
