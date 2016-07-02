@@ -9,7 +9,7 @@
 import UIKit
 import LoadIt
 
-struct MockJSONService: ResourceService {
+struct MockJSONService: ResourceServiceType {
   
   func fetch(resource resource: CitiesResource, completion: (Result<[City]>) -> Void) {
     let cities = [City(name: "Mock city")]

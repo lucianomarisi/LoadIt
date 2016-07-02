@@ -13,7 +13,7 @@ enum NetworkJSONServiceError: ErrorType {
   case NoData
 }
 
-public struct NetworkJSONService<Resource: NetworkJSONResource> {
+public struct NetworkJSONService<Resource: NetworkJSONResourceType> {
   
   private let session: Session
   
@@ -39,8 +39,8 @@ public struct NetworkJSONService<Resource: NetworkJSONResource> {
   
 }
 
-// MARK: - ResourceService
-extension NetworkJSONService: ResourceService {
+// MARK: - ResourceServiceType
+extension NetworkJSONService: ResourceServiceType {
   
   public func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void) {
     let urlRequest = resource.urlRequest()

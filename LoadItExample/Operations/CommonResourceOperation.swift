@@ -11,16 +11,16 @@ import LoadIt
 
 typealias CitiesCommonResourceOperation = CommonResourceOperation<DiskJSONService<CitiesResource>>
 
-final class CommonResourceOperation<ResourceServiceType: ResourceService>: BaseOperation, ResourceOperation {
+final class CommonResourceOperation<ResourceService: ResourceServiceType>: BaseOperation, ResourceOperation {
   
-  typealias Resource = ResourceServiceType.Resource
+  typealias Resource = ResourceService.Resource
   
   private let resource: Resource
-  private let service: ResourceServiceType
+  private let service: ResourceService
   
-  var didFinishFetchingResourceCallback: ((CommonResourceOperation<ResourceServiceType>, Result<Resource.ModelType>) -> Void)?
+  var didFinishFetchingResourceCallback: ((CommonResourceOperation<ResourceService>, Result<Resource.ModelType>) -> Void)?
   
-  init(resource: ResourceServiceType.Resource, service: ResourceServiceType = ResourceServiceType()) {
+  init(resource: ResourceService.Resource, service: ResourceService = ResourceService()) {
     self.resource = resource
     self.service = service
     super.init()

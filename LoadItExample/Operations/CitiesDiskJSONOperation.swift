@@ -15,17 +15,17 @@ protocol CitiesResourceOperationDelegate: class {
   func citiesOperationDidFinish(result result: Result<[City]>)
 }
 
-final class CitiesResourceOperation<ResourceServiceType: ResourceService where ResourceServiceType.Resource == CitiesResource>: BaseOperation, ResourceOperation {
+final class CitiesResourceOperation<ResourceService: ResourceServiceType where ResourceService.Resource == CitiesResource>: BaseOperation, ResourceOperation {
   
   typealias Resource = CitiesResource
   
   private let resource: CitiesResource
-  private let service: ResourceServiceType
+  private let service: ResourceService
   private weak var delegate: CitiesResourceOperationDelegate?
 
-  var didFinishFetchingResourceCallback: ((CitiesResourceOperation<ResourceServiceType>, Result<[City]>) -> Void)?
+  var didFinishFetchingResourceCallback: ((CitiesResourceOperation<ResourceService>, Result<[City]>) -> Void)?
   
-  init(resource: CitiesResource, service: ResourceServiceType = ResourceServiceType(), delegate: CitiesResourceOperationDelegate) {
+  init(resource: CitiesResource, service: ResourceService = ResourceService(), delegate: CitiesResourceOperationDelegate) {
     self.resource = resource
     self.service = service
     self.delegate = delegate

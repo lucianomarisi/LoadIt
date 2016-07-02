@@ -11,7 +11,7 @@ import LoadIt
 
 private let baseURL = NSURL(string: "http://localhost:8000/")!
 
-struct CitiesResource: NetworkJSONResource, DiskJSONResource {
+struct CitiesResource: NetworkJSONResourceType, DiskJSONResourceType {
   typealias ModelType = [City]
   
   let url: NSURL

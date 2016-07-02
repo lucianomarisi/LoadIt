@@ -38,8 +38,8 @@ public struct DiskJSONService<Resource: DiskJSONResourceType> {
   }
 }
 
-// MARK: - ResourceService
-extension DiskJSONService: ResourceService {
+// MARK: - ResourceServiceType
+extension DiskJSONService: ResourceServiceType {
   
   public func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void) {
     completion(resultFrom(resource: resource))
