@@ -15,9 +15,9 @@ protocol CitiesResourceOperationDelegate: class {
   func citiesOperationDidFinish(result result: Result<[City]>)
 }
 
-final class CitiesResourceOperation<ResourceServiceType: ResourceService where ResourceServiceType.ResourceType == CitiesResource>: BaseOperation, ResourceOperation {
+final class CitiesResourceOperation<ResourceServiceType: ResourceService where ResourceServiceType.Resource == CitiesResource>: BaseOperation, ResourceOperation {
   
-  typealias ResourceType = CitiesResource
+  typealias Resource = CitiesResource
   
   private let resource: CitiesResource
   private let service: ResourceServiceType

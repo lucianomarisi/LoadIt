@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol DiskJSONResource: JSONResource {
+public protocol DiskJSONResourceType: JSONResourceType {
   var filename: String { get }
 }

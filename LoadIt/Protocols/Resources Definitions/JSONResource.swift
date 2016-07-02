@@ -8,18 +8,18 @@
 
 import Foundation
 
-public protocol Resource {
+public protocol ResourceType {
   associatedtype ModelType
 }
 
-public protocol JSONResource: Resource {
+public protocol JSONResourceType: ResourceType {
   associatedtype ModelType // Not sure why this needs redeclaring to keep the Swift compiler happy
   func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> ModelType?
   func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType?
 }
 
 // MARK: - Parsing defaults
-extension JSONResource {
+extension JSONResourceType {
   public func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> ModelType? { return nil }
   public func modelFrom(jsonArray jsonArray: [AnyObject]) -> ModelType? { return nil }
 }
@@ -32,7 +32,7 @@ enum ParsingError: ErrorType {
 }
 
 // MARK: - Convenince parsing functions
-extension JSONResource {
+extension JSONResourceType {
   
   func resultFrom(data data: NSData) -> Result<ModelType> {
     guard let jsonObject = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) else {

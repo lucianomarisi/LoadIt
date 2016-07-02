@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol ResourceService {
-  associatedtype ResourceType: Resource
+  associatedtype Resource: ResourceType
   
   /**
    Designated initialzer for constructing a ResourceService
@@ -22,5 +22,5 @@ public protocol ResourceService {
    - parameter resource:   The resource to fetch
    - parameter completion: A completion handler called with a Result type of the fetching computation
    */
-  func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void)
+  func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void)
 }

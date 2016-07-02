@@ -13,7 +13,7 @@ enum DiskJSONServiceError: ErrorType {
   case NoData
 }
 
-public struct DiskJSONService<ResourceType: DiskJSONResource> {
+public struct DiskJSONService<Resource: DiskJSONResourceType> {
   
   private let bundle: Bundle
   
@@ -25,7 +25,7 @@ public struct DiskJSONService<ResourceType: DiskJSONResource> {
     self.bundle = bundle
   }
   
-  private func resultFrom(resource resource: ResourceType) -> Result<ResourceType.ModelType>{
+  private func resultFrom(resource resource: Resource) -> Result<Resource.ModelType>{
     guard let url = bundle.URLForResource(resource.filename, withExtension: "json") else {
       return.Failure(DiskJSONServiceError.FileNotFound)
     }
@@ -41,7 +41,7 @@ public struct DiskJSONService<ResourceType: DiskJSONResource> {
 // MARK: - ResourceService
 extension DiskJSONService: ResourceService {
   
-  public func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
+  public func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void) {
     completion(resultFrom(resource: resource))
   }
   

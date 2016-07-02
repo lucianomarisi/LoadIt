@@ -13,7 +13,7 @@ enum NetworkJSONServiceError: ErrorType {
   case NoData
 }
 
-public struct NetworkJSONService<ResourceType: NetworkJSONResource> {
+public struct NetworkJSONService<Resource: NetworkJSONResource> {
   
   private let session: Session
   
@@ -25,7 +25,7 @@ public struct NetworkJSONService<ResourceType: NetworkJSONResource> {
     self.session = session
   }
   
-  private func resultFrom(resource resource: ResourceType, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<ResourceType.ModelType> {
+  private func resultFrom(resource resource: Resource, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<Resource.ModelType> {
     if let error = error {
       return .Failure(NetworkJSONServiceError.NetworkingError(error: error))
     }
@@ -42,7 +42,7 @@ public struct NetworkJSONService<ResourceType: NetworkJSONResource> {
 // MARK: - ResourceService
 extension NetworkJSONService: ResourceService {
   
-  public func fetch(resource resource: ResourceType, completion: (Result<ResourceType.ModelType>) -> Void) {
+  public func fetch(resource resource: Resource, completion: (Result<Resource.ModelType>) -> Void) {
     let urlRequest = resource.urlRequest()
     
     session.performRequest(urlRequest) { (data, _, error) in

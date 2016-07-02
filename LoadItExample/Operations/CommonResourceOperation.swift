@@ -13,14 +13,14 @@ typealias CitiesCommonResourceOperation = CommonResourceOperation<DiskJSONServic
 
 final class CommonResourceOperation<ResourceServiceType: ResourceService>: BaseOperation, ResourceOperation {
   
-  typealias ResourceType = ResourceServiceType.ResourceType
+  typealias Resource = ResourceServiceType.Resource
   
-  private let resource: ResourceType
+  private let resource: Resource
   private let service: ResourceServiceType
   
-  var didFinishFetchingResourceCallback: ((CommonResourceOperation<ResourceServiceType>, Result<ResourceType.ModelType>) -> Void)?
+  var didFinishFetchingResourceCallback: ((CommonResourceOperation<ResourceServiceType>, Result<Resource.ModelType>) -> Void)?
   
-  init(resource: ResourceServiceType.ResourceType, service: ResourceServiceType = ResourceServiceType()) {
+  init(resource: ResourceServiceType.Resource, service: ResourceServiceType = ResourceServiceType()) {
     self.resource = resource
     self.service = service
     super.init()
@@ -30,7 +30,7 @@ final class CommonResourceOperation<ResourceServiceType: ResourceService>: BaseO
     fetch(resource: resource, usingService: service)
   }
   
-  func didFinishFetchingResource(result result: Result<ResourceType.ModelType>) {
+  func didFinishFetchingResource(result result: Result<Resource.ModelType>) {
     didFinishFetchingResourceCallback?(self, result)
   }
   

@@ -37,4 +37,4 @@ extension NetworkResource {
   }
 }
 
-public protocol NetworkJSONResource: NetworkResource, JSONResource {}
+public protocol NetworkJSONResource: NetworkResource, JSONResourceType {}

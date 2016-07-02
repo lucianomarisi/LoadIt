@@ -15,7 +15,7 @@ protocol CitiesNetworkJSONOperationDelegate: class {
 
 final class CitiesNetworkJSONOperation: BaseOperation, ResourceOperation {
   
-  typealias ResourceType = CitiesResource
+  typealias Resource = CitiesResource
   typealias CitiesService = NetworkJSONService<CitiesResource>
   
   private let resource: CitiesResource
