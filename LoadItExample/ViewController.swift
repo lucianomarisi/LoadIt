@@ -18,6 +18,7 @@ struct MockJSONService: ResourceServiceType {
   
 }
 
+private typealias CitiesCommonResourceOperation = CommonResourceOperation<DiskJSONService<CitiesResource>>
 
 class ViewController: UIViewController {
 

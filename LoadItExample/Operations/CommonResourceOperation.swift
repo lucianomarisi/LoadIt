@@ -9,8 +9,6 @@
 import Foundation
 import LoadIt
 
-typealias CitiesCommonResourceOperation = CommonResourceOperation<DiskJSONService<CitiesResource>>
-
 final class CommonResourceOperation<ResourceService: ResourceServiceType>: BaseOperation, ResourceOperation {
   
   typealias Resource = ResourceService.Resource
