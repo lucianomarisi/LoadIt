@@ -15,13 +15,13 @@ enum DiskJSONServiceError: ErrorType {
 
 public struct DiskJSONService<Resource: DiskJSONResourceType> {
   
-  private let bundle: Bundle
+  private let bundle: BundleType
   
   public init() {
     self.init(bundle: NSBundle.mainBundle())
   }
   
-  init(bundle: Bundle) {
+  init(bundle: BundleType) {
     self.bundle = bundle
   }
   

@@ -23,7 +23,7 @@
 		4F3D697A1D1F39A700E753D6 /* JSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResourceType.swift */; };
 		4F3D697B1D1F39CF00E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697C1D1F3A6F00E753D6 /* Result.swift */; };
-		4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697E1D1F3AB700E753D6 /* Session.swift */; };
+		4F3D697F1D1F3AB700E753D6 /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */; };
 		4F3D69811D1F3B0400E753D6 /* DiskJSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */; };
 		4F3D69831D1F3B1D00E753D6 /* CitiesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */; };
 		4F3D69851D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69841D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift */; };
@@ -68,7 +68,7 @@
 		4F3D69771D1F38BB00E753D6 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4F3D69791D1F39A700E753D6 /* JSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D697C1D1F3A6F00E753D6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		4F3D697E1D1F3AB700E753D6 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
 		4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesResource.swift; sourceTree = "<group>"; };
 		4F3D69841D1F3B4100E753D6 /* CitiesDiskJSONOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDiskJSONOperation.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 				4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */,
 				4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */,
 				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
-				4F3D697E1D1F3AB700E753D6 /* Session.swift */,
+				4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */,
 			);
 			path = "Convenience Types";
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				4F3D698D1D1F3CB500E753D6 /* DiskJSONService.swift in Sources */,
 				4F6F43401D280C1F00501353 /* ResourceServiceType.swift in Sources */,
 				4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift in Sources */,
-				4F3D697F1D1F3AB700E753D6 /* Session.swift in Sources */,
+				4F3D697F1D1F3AB700E753D6 /* URLSessionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

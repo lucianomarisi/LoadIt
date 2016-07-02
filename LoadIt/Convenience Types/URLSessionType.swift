@@ -1,5 +1,5 @@
 //
-//  Session.swift
+//  URLSessionType.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol Session {
+protocol URLSessionType {
   func performRequest(request: NSURLRequest, completion: (NSData?, NSURLResponse?, NSError?) -> Void)
 }
 
-extension NSURLSession: Session {
+extension NSURLSession: URLSessionType {
   public func performRequest(request: NSURLRequest, completion: (NSData?, NSURLResponse?, NSError?) -> Void) {
     dataTaskWithRequest(request, completionHandler: completion).resume()
   }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol Bundle {
+protocol BundleType {
   func URLForResource(name: String?, withExtension ext: String?) -> NSURL?
 }
 
-extension NSBundle: Bundle {}
+extension NSBundle: BundleType {}

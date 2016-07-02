@@ -15,13 +15,13 @@ enum NetworkJSONServiceError: ErrorType {
 
 public struct NetworkJSONService<Resource: NetworkJSONResourceType> {
   
-  private let session: Session
+  private let session: URLSessionType
   
   public init() {
     self.init(session: NSURLSession.sharedSession())
   }
   
-  init(session: Session) {
+  init(session: URLSessionType) {
     self.session = session
   }
   
