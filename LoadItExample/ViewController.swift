@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 //    operationQueue.cancelAllOperations()
     
     let asiaResource = CitiesResource(continent: "asia")
-    let citiesDiskJSONOperation = CitiesResourceOperation(resource: asiaResource, delegate: self)
+    let citiesDiskJSONOperation = CitiesDiskResourceOperation(resource: asiaResource, delegate: self)
     operationQueue.addOperation(citiesDiskJSONOperation)
 
     let citiesResourceOperation = CitiesCommon2ResourceOperation(resource: asiaResource) { [weak self] operation, result in
@@ -44,9 +44,9 @@ class ViewController: UIViewController {
     
     operationQueue.addOperation(citiesResourceOperation)
 
-//    let mockService = MockJSONService()
-//    let mockCitiesResourceOperation = CitiesResourceOperation<MockJSONService>(resource: asiaResource, service: mockService, delegate: self)
-//    operationQueue.addOperation(mockCitiesResourceOperation)
+    let mockService = MockJSONService()
+    let mockCitiesResourceOperation = CitiesResourceOperation<MockJSONService>(resource: asiaResource, service: mockService, delegate: self)
+    operationQueue.addOperation(mockCitiesResourceOperation)
 
 //    citiesDiskJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
@@ -85,7 +85,7 @@ extension ViewController: CitiesNetworkJSONOperationDelegate {
 
 extension ViewController: CitiesResourceOperationDelegate {
   
-  func citiesOperationDidFinish(operation: CitiesResourceOperation, result: Result<[City]>) {
+  func citiesOperationDidFinish(result result: Result<[City]>) {
     log(result: result)
   }
 //  func citiesOperationDidFinish(result: Result<[City]>) {
