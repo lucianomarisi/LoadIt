@@ -23,8 +23,8 @@ public extension NetworkJSONOperation {
       NSThread.executeOnMain { [weak self] in
         guard let strongSelf = self else { return }
         if strongSelf.cancelled { return }
-        strongSelf.finished(result: result)
         strongSelf.finish([])
+        strongSelf.didFinish(result: result)
       }
     }
   }
