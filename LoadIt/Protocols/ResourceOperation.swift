@@ -8,25 +8,33 @@
 
 import Foundation
 
+/// Define a type that is cancellable
 public protocol Cancellable: class {
+  /// Returns whether or not the type has been cancelled
   var cancelled: Bool { get }
 }
 
 public protocol Finishable: class {
+  /**
+   Method to be called when the type finished all it's work
+   
+   - parameter errors: Any error from the work done
+   */
   func finish(errors: [NSError])
 }
 
 public protocol ResourceOperation: Cancellable, Finishable {
+
   associatedtype ResourceType: Resource
-  var resource: ResourceType { get }
-  
+
   /**
-   <#Description#>
+   Fetches a resource using the provided service
    
-   - parameter service: <#service description#>
+   - parameter resource: The resource to fetch
+   - parameter service:  The service to be used for fetching the resource
    */
-  func fetchResource<T: ResourceService where T.ResourceType == ResourceType>(service service: T)
-  
+  func fetch<T: ResourceService where T.ResourceType == ResourceType>(resource resource:ResourceType, usingService service: T)
+
   /**
    Called when the operation has finished
    
@@ -37,7 +45,7 @@ public protocol ResourceOperation: Cancellable, Finishable {
 
 public extension ResourceOperation {
   
-  public func fetchResource<T: ResourceService where T.ResourceType == ResourceType>(service service: T) {
+  public func fetch<T: ResourceService where T.ResourceType == ResourceType>(resource resource:ResourceType, usingService service: T) {
     if cancelled { return }
     service.fetch(resource: resource) { [weak self] (result) in
       guard let strongSelf = self else { return }
@@ -45,8 +53,8 @@ public extension ResourceOperation {
       NSThread.executeOnMain { [weak self] in
         guard let strongSelf = self else { return }
         if strongSelf.cancelled { return }
-        strongSelf.didFinishFetchingResource(result: result)
         strongSelf.finish([])
+        strongSelf.didFinishFetchingResource(result: result)
       }
     }
   }

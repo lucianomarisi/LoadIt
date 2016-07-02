@@ -14,27 +14,30 @@ class ViewController: UIViewController {
   private let operationQueue = NSOperationQueue()
 
   override func viewDidLoad() {
-    super.viewDidLoad()    
-    let citiesNetworkJSONOperation = CitiesNetworkJSONOperation(continent: "america", delegate: self)
+    super.viewDidLoad()
+    let americaResource = CitiesResource(continent: "america")
+
+    let citiesNetworkJSONOperation = CitiesNetworkJSONOperation(resource: americaResource, delegate: self)
     operationQueue.addOperation(citiesNetworkJSONOperation)
 //    citiesNetworkJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
     
-    let citiesDiskJSONOperation = CitiesDiskJSONOperation(continent: "asia", delegate: self)
+    let asiaResource = CitiesResource(continent: "asia")
+    let citiesDiskJSONOperation = CitiesDiskJSONOperation(resource: asiaResource, delegate: self)
     operationQueue.addOperation(citiesDiskJSONOperation)
 //    citiesDiskJSONOperation.cancel()
 //    operationQueue.cancelAllOperations()
 
     
-    let citiesResource = CitiesResource(continent: "europe")
-    
+    let europeResource = CitiesResource(continent: "europe")
+
     let diskJSONService = DiskJSONService<CitiesResource>()
-    diskJSONService.fetch(resource: citiesResource) {[weak self] result in
+    diskJSONService.fetch(resource: europeResource) {[weak self] result in
       self?.log(result: result)
     }
     
     let networkJSONService = NetworkJSONService<CitiesResource>()
-    networkJSONService.fetch(resource: citiesResource) { [weak self] result in
+    networkJSONService.fetch(resource: europeResource) { [weak self] result in
       self?.log(result: result)
     }
     

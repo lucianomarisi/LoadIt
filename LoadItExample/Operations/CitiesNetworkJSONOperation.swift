@@ -15,20 +15,22 @@ protocol CitiesNetworkJSONOperationDelegate: class {
 
 final class CitiesNetworkJSONOperation: BaseOperation, ResourceOperation {
   
-  let resource: CitiesResource
+  typealias ResourceType = CitiesResource
+  typealias CitiesService = NetworkJSONService<CitiesResource>
   
+  private let resource: CitiesResource
+  private let service: CitiesService
   private weak var delegate: CitiesNetworkJSONOperationDelegate?
-  private let networkJSONService: NetworkJSONService<CitiesResource>
   
-  init(continent: String, networkJSONService: NetworkJSONService<CitiesResource> = NetworkJSONService<CitiesResource>(), delegate: CitiesNetworkJSONOperationDelegate) {
-    self.resource = CitiesResource(continent: continent)
-    self.networkJSONService = networkJSONService
+  init(resource: CitiesResource, service: CitiesService = CitiesService(), delegate: CitiesNetworkJSONOperationDelegate) {
+    self.resource = resource
+    self.service = service
     self.delegate = delegate
     super.init()
   }
   
   override func execute() {
-    fetchResource(service: networkJSONService)
+    fetch(resource: resource, usingService: service)
   }
 
   func didFinishFetchingResource(result result: Result<[City]>) {

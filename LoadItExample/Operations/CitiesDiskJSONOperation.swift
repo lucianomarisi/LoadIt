@@ -15,19 +15,21 @@ protocol CitiesDiskJSONOperationDelegate: class {
 
 final class CitiesDiskJSONOperation: BaseOperation, ResourceOperation {
   
-  let resource: CitiesResource
+  typealias ResourceType = CitiesResource
+  
+  private let resource: CitiesResource
   private weak var delegate: CitiesDiskJSONOperationDelegate?
   private let diskJSONService: DiskJSONService<CitiesResource>
   
-  init(continent: String, diskJSONService: DiskJSONService<CitiesResource> = DiskJSONService<CitiesResource>(), delegate: CitiesDiskJSONOperationDelegate) {
-    self.resource = CitiesResource(continent: continent)
-    self.diskJSONService = diskJSONService
+  init(resource: CitiesResource, service: DiskJSONService<CitiesResource> = DiskJSONService<CitiesResource>(), delegate: CitiesDiskJSONOperationDelegate) {
+    self.resource = resource
+    self.diskJSONService = service
     self.delegate = delegate
     super.init()
   }
   
   override func execute() {
-    fetchResource(service: diskJSONService)
+    fetch(resource: resource, usingService: diskJSONService)
   }
   
   func didFinishFetchingResource(result result: Result<[City]>) {
