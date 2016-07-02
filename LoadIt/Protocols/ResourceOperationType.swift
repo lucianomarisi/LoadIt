@@ -23,7 +23,7 @@ public protocol Finishable: class {
   func finish(errors: [NSError])
 }
 
-public protocol ResourceOperation: Cancellable, Finishable {
+public protocol ResourceOperationType: Cancellable, Finishable {
 
   associatedtype Resource: ResourceType
 
@@ -43,7 +43,7 @@ public protocol ResourceOperation: Cancellable, Finishable {
   func didFinishFetchingResource(result result: Result<Resource.Model>)
 }
 
-public extension ResourceOperation {
+public extension ResourceOperationType {
   
   public func fetch<Service: ResourceServiceType where Service.Resource == Resource>(resource resource:Resource, usingService service: Service) {
     if cancelled { return }

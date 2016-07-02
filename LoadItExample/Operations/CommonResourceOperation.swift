@@ -9,7 +9,7 @@
 import Foundation
 import LoadIt
 
-final class CommonResourceOperation<ResourceService: ResourceServiceType>: BaseOperation, ResourceOperation {
+final class CommonResourceOperation<ResourceService: ResourceServiceType>: BaseOperation, ResourceOperationType {
   
   typealias Resource = ResourceService.Resource
   

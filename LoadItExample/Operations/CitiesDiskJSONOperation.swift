@@ -15,7 +15,7 @@ protocol CitiesResourceOperationDelegate: class {
   func citiesOperationDidFinish(result result: Result<[City]>)
 }
 
-final class CitiesResourceOperation<ResourceService: ResourceServiceType where ResourceService.Resource == CitiesResource>: BaseOperation, ResourceOperation {
+final class CitiesResourceOperation<ResourceService: ResourceServiceType where ResourceService.Resource == CitiesResource>: BaseOperation, ResourceOperationType {
   
   typealias Resource = CitiesResource
   

@@ -13,7 +13,7 @@ protocol CitiesNetworkJSONOperationDelegate: class {
   func citiesOperationDidFinish(operation: CitiesNetworkJSONOperation, result: Result<[City]>)
 }
 
-final class CitiesNetworkJSONOperation: BaseOperation, ResourceOperation {
+final class CitiesNetworkJSONOperation: BaseOperation, ResourceOperationType {
   
   typealias Resource = CitiesResource
   typealias CitiesService = NetworkJSONService<CitiesResource>

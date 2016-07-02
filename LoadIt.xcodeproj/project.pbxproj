@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F541D1FF9580030101A /* ResourceOperation.swift */; };
+		4F196F551D1FF9580030101A /* ResourceOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F541D1FF9580030101A /* ResourceOperationType.swift */; };
 		4F196F581D2001CC0030101A /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F571D2001CC0030101A /* BaseOperation.swift */; };
 		4F196F5B1D20022D0030101A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* Bundle.swift */; };
 		4F196F5D1D207F890030101A /* europe.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F196F5C1D207F890030101A /* europe.json */; };
@@ -49,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F196F541D1FF9580030101A /* ResourceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperation.swift; sourceTree = "<group>"; };
+		4F196F541D1FF9580030101A /* ResourceOperationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperationType.swift; sourceTree = "<group>"; };
 		4F196F571D2001CC0030101A /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		4F196F5C1D207F890030101A /* europe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = europe.json; sourceTree = "<group>"; };
 		4F3D693A1D1F36D700E753D6 /* LoadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3D69951D1F3E6400E753D6 /* Resources Definitions */,
-				4F196F541D1FF9580030101A /* ResourceOperation.swift */,
+				4F196F541D1FF9580030101A /* ResourceOperationType.swift */,
 				4F6F433F1D280C1F00501353 /* ResourceServiceType.swift */,
 			);
 			path = Protocols;
@@ -379,7 +379,7 @@
 				4F3D69811D1F3B0400E753D6 /* DiskJSONResourceType.swift in Sources */,
 				4F3D697D1D1F3A6F00E753D6 /* Result.swift in Sources */,
 				4F3D697A1D1F39A700E753D6 /* JSONResourceType.swift in Sources */,
-				4F196F551D1FF9580030101A /* ResourceOperation.swift in Sources */,
+				4F196F551D1FF9580030101A /* ResourceOperationType.swift in Sources */,
 				4F3D698D1D1F3CB500E753D6 /* DiskJSONService.swift in Sources */,
 				4F6F43401D280C1F00501353 /* ResourceServiceType.swift in Sources */,
 				4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift in Sources */,
