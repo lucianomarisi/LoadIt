@@ -10,30 +10,31 @@ import Foundation
 import LoadIt
 
 protocol CitiesDiskJSONOperationDelegate: class {
-  func citiesOperationDidFinish(operation: CitiesDiskJSONOperation, result: Result<[City]>)
+  func citiesOperationDidFinish(result result: Result<[City]>)
 }
 
-final class CitiesDiskJSONOperation: BaseOperation, ResourceOperation {
+final class CitiesDiskJSONOperation<ResourceServiceType: ResourceService where ResourceServiceType.ResourceType == CitiesResource>: BaseOperation, ResourceOperation {
   
   typealias ResourceType = CitiesResource
   
   private let resource: CitiesResource
+  private let service: ResourceServiceType
   private weak var delegate: CitiesDiskJSONOperationDelegate?
-  private let diskJSONService: DiskJSONService<CitiesResource>
-  
-  init(resource: CitiesResource, service: DiskJSONService<CitiesResource> = DiskJSONService<CitiesResource>(), delegate: CitiesDiskJSONOperationDelegate) {
+
+//  init(resource: CitiesResource, service: ResourceServiceType = DiskJSONService<CitiesResource>(), delegate: CitiesDiskJSONOperationDelegate) {
+  init(resource: CitiesResource, service: ResourceServiceType, delegate: CitiesDiskJSONOperationDelegate) {
     self.resource = resource
-    self.diskJSONService = service
+    self.service = service
     self.delegate = delegate
     super.init()
   }
   
   override func execute() {
-    fetch(resource: resource, usingService: diskJSONService)
+    fetch(resource: resource, usingService: service)
   }
   
   func didFinishFetchingResource(result result: Result<[City]>) {
-    self.delegate?.citiesOperationDidFinish(self, result: result)
+    self.delegate?.citiesOperationDidFinish(result: result)
   }
   
 }
