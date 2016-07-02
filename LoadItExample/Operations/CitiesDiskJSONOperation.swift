@@ -22,8 +22,6 @@ final class CitiesResourceOperation<ResourceService: ResourceServiceType where R
   private let resource: CitiesResource
   private let service: ResourceService
   private weak var delegate: CitiesResourceOperationDelegate?
-
-  var didFinishFetchingResourceCallback: ((CitiesResourceOperation<ResourceService>, Result<[City]>) -> Void)?
   
   init(resource: CitiesResource, service: ResourceService = ResourceService(), delegate: CitiesResourceOperationDelegate) {
     self.resource = resource
