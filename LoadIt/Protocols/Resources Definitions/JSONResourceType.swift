@@ -13,7 +13,6 @@ public protocol ResourceType {
 }
 
 public protocol JSONResourceType: ResourceType {
-  associatedtype Model // Not sure why this needs redeclaring to keep the Swift compiler happy
   func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> Model?
   func modelFrom(jsonArray jsonArray: [AnyObject]) -> Model?
 }
