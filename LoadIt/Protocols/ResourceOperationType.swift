@@ -48,8 +48,6 @@ public extension ResourceOperationType {
   public func fetch<Service: ResourceServiceType where Service.Resource == Resource>(resource resource:Resource, usingService service: Service) {
     if cancelled { return }
     service.fetch(resource: resource) { [weak self] (result) in
-      guard let strongSelf = self else { return }
-      if strongSelf.cancelled { return }
       NSThread.executeOnMain { [weak self] in
         guard let strongSelf = self else { return }
         if strongSelf.cancelled { return }
