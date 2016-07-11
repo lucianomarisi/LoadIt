@@ -45,7 +45,7 @@ extension NetworkJSONService: ResourceServiceType {
   public func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
     let urlRequest = resource.urlRequest()
     
-    session.performRequest(urlRequest) { (data, _, error) in
+    session.perform(request: urlRequest) { (data, _, error) in
       completion(self.resultFrom(resource: resource, data: data, URLResponse: nil, error: error))
     }
   }
