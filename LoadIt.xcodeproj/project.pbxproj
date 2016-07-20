@@ -27,7 +27,7 @@
 		4F3D697F1D1F3AB700E753D6 /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */; };
 		4F3D69811D1F3B0400E753D6 /* DiskJSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */; };
 		4F3D69831D1F3B1D00E753D6 /* CitiesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */; };
-		4F3D69891D1F3BDB00E753D6 /* NetworkJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */; };
+		4F3D69891D1F3BDB00E753D6 /* NetworkJSONResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69881D1F3BDB00E753D6 /* NetworkJSONResourceService.swift */; };
 		4F3D698B1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift */; };
 		4F3D698D1D1F3CB500E753D6 /* DiskJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */; };
 		4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */; };
@@ -69,7 +69,7 @@
 		4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
 		4F3D69801D1F3B0400E753D6 /* DiskJSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D69821D1F3B1D00E753D6 /* CitiesResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesResource.swift; sourceTree = "<group>"; };
-		4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONService.swift; sourceTree = "<group>"; };
+		4F3D69881D1F3BDB00E753D6 /* NetworkJSONResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONResourceService.swift; sourceTree = "<group>"; };
 		4F3D698A1D1F3C6E00E753D6 /* NetworkJSONResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONResourceType.swift; sourceTree = "<group>"; };
 		4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskJSONService.swift; sourceTree = "<group>"; };
 		4F3D69911D1F3DD800E753D6 /* NSThread+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSThread+Additions.swift"; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 			children = (
 				4F3D69981D1F3EB900E753D6 /* BundleType.swift */,
 				4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */,
-				4F3D69881D1F3BDB00E753D6 /* NetworkJSONService.swift */,
+				4F3D69881D1F3BDB00E753D6 /* NetworkJSONResourceService.swift */,
 				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
 				4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */,
 			);
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3D69891D1F3BDB00E753D6 /* NetworkJSONService.swift in Sources */,
+				4F3D69891D1F3BDB00E753D6 /* NetworkJSONResourceService.swift in Sources */,
 				4F196F5B1D20022D0030101A /* BundleType.swift in Sources */,
 				4F3D69921D1F3DD800E753D6 /* NSThread+Additions.swift in Sources */,
 				4F3D69811D1F3B0400E753D6 /* DiskJSONResourceType.swift in Sources */,

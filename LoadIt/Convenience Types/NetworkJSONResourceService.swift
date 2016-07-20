@@ -1,5 +1,5 @@
 //
-//  NetworkJSONService.swift
+//  NetworkJSONResourceService.swift
 //  LoadIt
 //
 //  Created by Luciano Marisi on 25/06/2016.
