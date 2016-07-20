@@ -35,7 +35,7 @@ public class NetworkJSONResourceService<Resource: NetworkJSONResourceType>: Reso
     return [:]
   }
   
-  private let session: URLSessionType
+  let session: URLSessionType
   
   public required init() {
     self.session = NSURLSession.sharedSession()

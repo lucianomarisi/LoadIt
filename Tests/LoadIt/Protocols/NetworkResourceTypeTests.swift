@@ -13,7 +13,15 @@ private let url = NSURL(string: "www.test.com")!
 
 class NetworkResourceTypeTests: XCTestCase {
   
-  func test_NetworkJSONResource_hasCorrectDefaultValues() {
+  func test_NetworkResource_hasCorrectDefaultValues() {
+    let mockDefaultNetworkJSONResource = MockDefaultNetworkResource(url: url)
+    XCTAssertEqual(mockDefaultNetworkJSONResource.HTTPRequestMethod, HTTPMethod.GET)
+    XCTAssertEqual(mockDefaultNetworkJSONResource.HTTPHeaderFields!, [String: String]())
+    XCTAssertNil(mockDefaultNetworkJSONResource.JSONBody)
+    XCTAssertNil(mockDefaultNetworkJSONResource.queryItems)
+  }
+  
+  func test_NetworkJSONResourceType_hasCorrectDefaultValues() {
     let mockDefaultNetworkJSONResource = MockDefaultNetworkJSONResource(url: url)
     XCTAssertEqual(mockDefaultNetworkJSONResource.HTTPRequestMethod, HTTPMethod.GET)
     XCTAssertEqual(mockDefaultNetworkJSONResource.HTTPHeaderFields!, ["Content-Type": "application/json"])

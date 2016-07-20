@@ -39,13 +39,7 @@ class ResourceOperationTypeTests: XCTestCase {
     mockService = MockResourceService()
     testResourceOperation = TestResourceOperation()
   }
-  
-  override func tearDown() {
-    mockService = nil
-    testResourceOperation = nil
-    super.tearDown()
-  }
-  
+
   func test_fetch_callsFinishAndDidFinish_withCorrectResultOnSuccess() {
     testResourceOperation.fetch(resource: MockResource(), usingService: mockService)
     let expectedResult = Result.Success("some result")

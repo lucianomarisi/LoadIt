@@ -26,11 +26,10 @@ class NetworkJSONResourceServiceTests: XCTestCase {
     mockResource = MockDefaultNetworkJSONResource(url: testURL)
   }
   
-  override func tearDown() {
-    testService = nil
-    mockSession = nil
-    mockResource = nil
-    super.tearDown()
+  func test_publicInitializerUsesSharedURLSession() {
+    testService = NetworkJSONResourceService<MockDefaultNetworkJSONResource>()
+    XCTAssert(testService.session is NSURLSession)
+    XCTAssertEqual(testService.session as? NSURLSession, NSURLSession.sharedSession())
   }
   
   func test_fetch_callsPerformRequestOnSessionWithCorrectURLRequest() {
