@@ -22,7 +22,7 @@ struct MockService: ResourceServiceType {
   
 }
 
-private typealias CitiesNetworkResourceOperation = ResourceOperation<NetworkJSONService<CitiesResource>>
+private typealias CitiesNetworkResourceOperation = ResourceOperation<NetworkJSONResourceService<CitiesResource>>
 private typealias CitiesDiskResourceOperation = ResourceOperation<DiskJSONService<CitiesResource>>
 private typealias MockResourceOperation = ResourceOperation<MockService>
 
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
       self?.log(result: result)
     }
     
-    let networkJSONService = NetworkJSONService<CitiesResource>()
+    let networkJSONService = NetworkJSONResourceService<CitiesResource>()
     networkJSONService.fetch(resource: europeResource) { [weak self] result in
       self?.log(result: result)
     }
