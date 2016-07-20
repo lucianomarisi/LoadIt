@@ -49,8 +49,7 @@ public extension ResourceOperationType {
     if cancelled { return }
     service.fetch(resource: resource) { [weak self] (result) in
       NSThread.li_executeOnMain { [weak self] in
-        guard let strongSelf = self else { return }
-        if strongSelf.cancelled { return }
+        guard let strongSelf = self where !strongSelf.cancelled else { return }
         strongSelf.finish([])
         strongSelf.didFinishFetchingResource(result: result)
       }
