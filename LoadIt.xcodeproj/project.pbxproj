@@ -12,6 +12,9 @@
 		4F196F5D1D207F890030101A /* europe.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F196F5C1D207F890030101A /* europe.json */; };
 		4F3CFC081D4013680074B6F5 /* ResourceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6ED78B1D282B4E009EA9E8 /* ResourceOperation.swift */; };
 		4F3CFC091D40136C0074B6F5 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F196F571D2001CC0030101A /* BaseOperation.swift */; };
+		4F3CFC0D1D401C3F0074B6F5 /* ResourceOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC0C1D401C3F0074B6F5 /* ResourceOperationTests.swift */; };
+		4F3CFC101D401C770074B6F5 /* MockResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC0F1D401C770074B6F5 /* MockResource.swift */; };
+		4F3CFC121D401CD70074B6F5 /* MockResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC111D401CD60074B6F5 /* MockResourceService.swift */; };
 		4F3D693E1D1F36D700E753D6 /* LoadIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D693D1D1F36D700E753D6 /* LoadIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3D69451D1F36D800E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69491D1F36D800E753D6 /* LoadItTests.swift */; };
@@ -50,6 +53,9 @@
 		4F196F541D1FF9580030101A /* ResourceOperationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperationType.swift; sourceTree = "<group>"; };
 		4F196F571D2001CC0030101A /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		4F196F5C1D207F890030101A /* europe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = europe.json; sourceTree = "<group>"; };
+		4F3CFC0C1D401C3F0074B6F5 /* ResourceOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperationTests.swift; sourceTree = "<group>"; };
+		4F3CFC0F1D401C770074B6F5 /* MockResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockResource.swift; sourceTree = "<group>"; };
+		4F3CFC111D401CD60074B6F5 /* MockResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockResourceService.swift; sourceTree = "<group>"; };
 		4F3D693A1D1F36D700E753D6 /* LoadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3D693D1D1F36D700E753D6 /* LoadIt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadIt.h; sourceTree = "<group>"; };
 		4F3D693F1D1F36D700E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +143,23 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		4F3CFC0B1D401C210074B6F5 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4F3CFC0C1D401C3F0074B6F5 /* ResourceOperationTests.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		4F3CFC0E1D401C670074B6F5 /* MockResource */ = {
+			isa = PBXGroup;
+			children = (
+				4F3CFC0F1D401C770074B6F5 /* MockResource.swift */,
+				4F3CFC111D401CD60074B6F5 /* MockResourceService.swift */,
+			);
+			name = MockResource;
+			sourceTree = "<group>";
+		};
 		4F3D69301D1F36D700E753D6 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +196,8 @@
 		4F3D69481D1F36D800E753D6 /* LoadItTests */ = {
 			isa = PBXGroup;
 			children = (
+				4F3CFC0E1D401C670074B6F5 /* MockResource */,
+				4F3CFC0B1D401C210074B6F5 /* Operations */,
 				4F3D694B1D1F36D800E753D6 /* Info.plist */,
 				4F3D69491D1F36D800E753D6 /* LoadItTests.swift */,
 			);
@@ -397,6 +422,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */,
+				4F3CFC0D1D401C3F0074B6F5 /* ResourceOperationTests.swift in Sources */,
+				4F3CFC101D401C770074B6F5 /* MockResource.swift in Sources */,
+				4F3CFC121D401CD70074B6F5 /* MockResourceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
