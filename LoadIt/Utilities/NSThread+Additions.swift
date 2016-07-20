@@ -10,7 +10,7 @@ import Foundation
 
 extension NSThread {
 
-  static func executeOnMain(mainThreadClosure: () -> Void) {
+  static func li_executeOnMain(mainThreadClosure: () -> Void) {
     if self.currentThread() == self.mainThread() {
       mainThreadClosure()
     } else {

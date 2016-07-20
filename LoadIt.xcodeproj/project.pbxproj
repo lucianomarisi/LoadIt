@@ -126,6 +126,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4F3CFC0A1D4017E10074B6F5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D69981D1F3EB900E753D6 /* BundleType.swift */,
+				4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */,
+				4F3D69881D1F3BDB00E753D6 /* NetworkJSONResourceService.swift */,
+				4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		4F3D69301D1F36D700E753D6 = {
 			isa = PBXGroup;
 			children = (
@@ -208,11 +219,8 @@
 		4F3D69971D1F3E7C00E753D6 /* Convenience Types */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69981D1F3EB900E753D6 /* BundleType.swift */,
-				4F3D698C1D1F3CB500E753D6 /* DiskJSONService.swift */,
-				4F3D69881D1F3BDB00E753D6 /* NetworkJSONResourceService.swift */,
+				4F3CFC0A1D4017E10074B6F5 /* Services */,
 				4F3D697C1D1F3A6F00E753D6 /* Result.swift */,
-				4F3D697E1D1F3AB700E753D6 /* URLSessionType.swift */,
 			);
 			path = "Convenience Types";
 			sourceTree = "<group>";
