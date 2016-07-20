@@ -29,4 +29,12 @@ class ResourceOperationTests: XCTestCase {
     waitForExpectationsWithTimeout(1, handler: nil)
   }
   
+  func test_resourceOperationExecute_callsFetchOnService() {
+    let mockService = MockResourceService()
+    let resourceOperation = ResourceOperation<MockResourceService>(resource: mockResource, service: mockService, didFinishFetchingResourceCallback: { (_) in })
+    resourceOperation.execute()
+    XCTAssertNotNil(mockService.capturedResource)
+    XCTAssertNotNil(mockService.capturedCompletion)
+  }
+  
 }
