@@ -87,19 +87,17 @@ extension JSONResourceType {
   }
   
   private func resultFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> Result<Model> {
-    if let parsedResults = modelFrom(jsonDictionary: jsonDictionary) {
-      return .Success(parsedResults)
-    } else {
+    guard let parsedResults = modelFrom(jsonDictionary: jsonDictionary) else {
       return .Failure(JSONParsingError.CannotParseJSONDictionary)
     }
+    return .Success(parsedResults)
   }
   
   private func resultFrom(jsonArray jsonArray: [AnyObject]) -> Result<Model> {
-    if let parsedResults = modelFrom(jsonArray: jsonArray) {
-      return .Success(parsedResults)
-    } else {
+    guard let parsedResults = modelFrom(jsonArray: jsonArray) else {
       return .Failure(JSONParsingError.CannotParseJSONArray)
     }
+    return .Success(parsedResults)
   }
   
 }
