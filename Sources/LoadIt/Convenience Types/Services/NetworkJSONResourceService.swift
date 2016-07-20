@@ -16,11 +16,11 @@ import Foundation
  - NetworkingError:          Any other networking error
  - NoData:                   No data was returned
  */
-public enum NetworkServiceError: ErrorType {
-  case CouldNotCreateURLRequest
-  case StatusCodeError(statusCode: Int)
-  case NetworkingError(error: NSError)
-  case NoData
+public enum NetworkServiceError: ErrorProtocol {
+  case couldNotCreateURLRequest
+  case statusCodeError(statusCode: Int)
+  case networkingError(error: NSError)
+  case noData
 }
 
 public class NetworkJSONResourceService<Resource: NetworkJSONResourceType>: ResourceServiceType {
@@ -38,16 +38,16 @@ public class NetworkJSONResourceService<Resource: NetworkJSONResourceType>: Reso
   private let session: URLSessionType
   
   public required init() {
-    self.session = NSURLSession.sharedSession()
+    self.session = URLSession.shared
   }
   
   init(session: URLSessionType) {
     self.session = session
   }
   
-  public final func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
-    guard let urlRequest = resource.urlRequest() as? NSMutableURLRequest else {
-      completion(.Failure(NetworkServiceError.CouldNotCreateURLRequest))
+  public final func fetch(resource: Resource, completion: (Result<Resource.Model>) -> Void) {
+    guard var urlRequest = resource.urlRequest() else {
+      completion(.failure(NetworkServiceError.couldNotCreateURLRequest))
       return
     }
     
@@ -58,7 +58,7 @@ public class NetworkJSONResourceService<Resource: NetworkJSONResourceType>: Reso
     }
   }
   
-  private func allHTTPHeaderFields(resourceHTTPHeaderFields resourceHTTPHeaderFields: [String: String]?) -> [String: String]? {
+  private func allHTTPHeaderFields(resourceHTTPHeaderFields: [String: String]?) -> [String: String]? {
     var generalHTTPHeaderFields = additionalHeaderFields()
     if let resourceHTTPHeaderFields = resourceHTTPHeaderFields {
       for (key, value) in resourceHTTPHeaderFields {
@@ -68,22 +68,22 @@ public class NetworkJSONResourceService<Resource: NetworkJSONResourceType>: Reso
     return generalHTTPHeaderFields
   }
   
-  private func resultFrom(resource resource: Resource, data: NSData?, URLResponse: NSURLResponse?, error: NSError?) -> Result<Resource.Model> {
+  private func resultFrom(resource: Resource, data: Data?, URLResponse: Foundation.URLResponse?, error: NSError?) -> Result<Resource.Model> {
     
-    if let HTTPURLResponse = URLResponse as? NSHTTPURLResponse {
+    if let HTTPURLResponse = URLResponse as? HTTPURLResponse {
       switch HTTPURLResponse.statusCode {
       case 400..<600:
-        return .Failure(NetworkServiceError.StatusCodeError(statusCode: HTTPURLResponse.statusCode))
+        return .failure(NetworkServiceError.statusCodeError(statusCode: HTTPURLResponse.statusCode))
       default: break
       }
     }
     
     if let error = error {
-      return .Failure(NetworkServiceError.NetworkingError(error: error))
+      return .failure(NetworkServiceError.networkingError(error: error))
     }
     
     guard let data = data else {
-      return .Failure(NetworkServiceError.NoData)
+      return .failure(NetworkServiceError.noData)
     }
     
     return resource.resultFrom(data: data)

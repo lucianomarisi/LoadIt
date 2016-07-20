@@ -10,10 +10,10 @@ import Foundation
 @testable import LoadIt
 
 final class MockURLSession: URLSessionType {
-  var capturedRequest: NSURLRequest?
-  var capturedCompletion: ((NSData?, NSURLResponse?, NSError?) -> Void)?
+  var capturedRequest: URLRequest?
+  var capturedCompletion: ((Data?, URLResponse?, NSError?) -> Void)?
   
-  func perform(request request: NSURLRequest, completion: (NSData?, NSURLResponse?, NSError?) -> Void) {
+  func perform(request: URLRequest, completion: (Data?, URLResponse?, NSError?) -> Void) {
     capturedRequest = request
     capturedCompletion = completion
   }

@@ -28,7 +28,7 @@ public final class ResourceOperation<ResourceService: ResourceServiceType>: Base
     fetch(resource: resource, usingService: service)
   }
   
-  public func didFinishFetchingResource(result result: Result<Resource.Model>) {
+  public func didFinishFetchingResource(result: Result<Resource.Model>) {
     didFinishFetchingResourceCallback(self, result)
   }
   

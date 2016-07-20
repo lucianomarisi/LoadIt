@@ -12,13 +12,13 @@ import Foundation
 struct MockNetworkJSONResource: NetworkJSONResourceType {
   typealias Model = String
   
-  let url: NSURL
+  let url: URL
   let HTTPRequestMethod: HTTPMethod
   let HTTPHeaderFields: [String: String]?
   let JSONBody: AnyObject?
-  let queryItems: [NSURLQueryItem]?
+  let queryItems: [URLQueryItem]?
   
-  init(url: NSURL, HTTPRequestMethod: HTTPMethod = .GET, HTTPHeaderFields: [String : String]? = nil, JSONBody: AnyObject? = nil, queryItems: [NSURLQueryItem]? = nil) {
+  init(url: URL, HTTPRequestMethod: HTTPMethod = .GET, HTTPHeaderFields: [String : String]? = nil, JSONBody: AnyObject? = nil, queryItems: [URLQueryItem]? = nil) {
     self.url = url
     self.HTTPRequestMethod = HTTPRequestMethod
     self.HTTPHeaderFields = HTTPHeaderFields

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol BundleType {
-  func URLForResource(name: String?, withExtension ext: String?) -> NSURL?
+  func URLForResource(_ name: String?, withExtension ext: String?) -> URL?
 }
 
-extension NSBundle: BundleType {}
+extension Bundle: BundleType {}

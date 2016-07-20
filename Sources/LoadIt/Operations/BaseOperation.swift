@@ -8,55 +8,55 @@
 
 import Foundation
 
-public class BaseOperation: NSOperation {
+public class BaseOperation: Operation {
   
-  public override var asynchronous: Bool {
+  public override var isAsynchronous: Bool {
     get{
       return true
     }
   }
   
   private var _executing: Bool = false
-  public override var executing:Bool {
+  public override var isExecuting:Bool {
     get { return _executing }
     set {
-      willChangeValueForKey("isExecuting")
+      willChangeValue(forKey: "isExecuting")
       _executing = newValue
-      didChangeValueForKey("isExecuting")
+      didChangeValue(forKey: "isExecuting")
       if _cancelled == true {
-        self.finished = true
+        self.isFinished = true
       }
     }
   }
   private var _finished: Bool = false
-  public override var finished: Bool {
+  public override var isFinished: Bool {
     get { return _finished }
     set {
-      willChangeValueForKey("isFinished")
+      willChangeValue(forKey: "isFinished")
       _finished = newValue
-      didChangeValueForKey("isFinished")
+      didChangeValue(forKey: "isFinished")
     }
   }
   
   private var _cancelled: Bool = false
-  public override var cancelled: Bool {
+  public override var isCancelled: Bool {
     get { return _cancelled }
     set {
-      willChangeValueForKey("isCancelled")
+      willChangeValue(forKey: "isCancelled")
       _cancelled = newValue
-      didChangeValueForKey("isCancelled")
+      didChangeValue(forKey: "isCancelled")
     }
   }
   
   public final override func start() {
     super.start()
-    self.executing = true
+    self.isExecuting = true
   }
   
   public final override func main() {
-    if cancelled {
-      executing = false
-      finished = true
+    if isCancelled {
+      isExecuting = false
+      isFinished = true
       return
     }
     execute()
@@ -67,17 +67,17 @@ public class BaseOperation: NSOperation {
     finish()
   }
 
-  public final func finish(errors: [NSError] = []) {
-    self.finished = true
-    self.executing = false
+  public final func finish(_ errors: [NSError] = []) {
+    self.isFinished = true
+    self.isExecuting = false
   }
   
   public final override func cancel() {
     super.cancel()
-    cancelled = true
-    if executing {
-      executing = false
-      finished = true
+    isCancelled = true
+    if isExecuting {
+      isExecuting = false
+      isFinished = true
     }
   }
 }

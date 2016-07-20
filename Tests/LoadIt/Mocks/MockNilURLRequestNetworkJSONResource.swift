@@ -11,8 +11,8 @@ import Foundation
 
 struct MockNilURLRequestNetworkJSONResource: NetworkJSONResourceType {
   typealias Model = String
-  let url: NSURL = NSURL(string: "www.test.com")!
-  func urlRequest() -> NSURLRequest? {
+  let url: URL = URL(string: "www.test.com")!
+  func urlRequest() -> URLRequest? {
     return nil
   }
 }

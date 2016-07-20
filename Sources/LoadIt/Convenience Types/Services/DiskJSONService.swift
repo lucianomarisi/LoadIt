@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum DiskJSONServiceError: ErrorType {
-  case FileNotFound
-  case NoData
+enum DiskJSONServiceError: ErrorProtocol {
+  case fileNotFound
+  case noData
 }
 
 public struct DiskJSONService<Resource: DiskJSONResourceType> {
@@ -18,20 +18,20 @@ public struct DiskJSONService<Resource: DiskJSONResourceType> {
   private let bundle: BundleType
   
   public init() {
-    self.init(bundle: NSBundle.mainBundle())
+    self.init(bundle: Bundle.main)
   }
   
   init(bundle: BundleType) {
     self.bundle = bundle
   }
   
-  private func resultFrom(resource resource: Resource) -> Result<Resource.Model>{
+  private func resultFrom(resource: Resource) -> Result<Resource.Model>{
     guard let url = bundle.URLForResource(resource.filename, withExtension: "json") else {
-      return.Failure(DiskJSONServiceError.FileNotFound)
+      return.failure(DiskJSONServiceError.fileNotFound)
     }
     
-    guard let data = NSData(contentsOfURL: url) else {
-      return.Failure(DiskJSONServiceError.NoData)
+    guard let data = try? Data(contentsOf: url) else {
+      return.failure(DiskJSONServiceError.noData)
     }
     
     return resource.resultFrom(data: data)
@@ -41,7 +41,7 @@ public struct DiskJSONService<Resource: DiskJSONResourceType> {
 // MARK: - ResourceServiceType
 extension DiskJSONService: ResourceServiceType {
   
-  public func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
+  public func fetch(resource: Resource, completion: (Result<Resource.Model>) -> Void) {
     completion(resultFrom(resource: resource))
   }
   

@@ -8,15 +8,15 @@
 
 import Foundation
 
-extension NSThread {
+extension Thread {
 
-  static func li_executeOnMain(mainThreadClosure: () -> Void) {
-    if self.currentThread() == self.mainThread() {
+  static func li_executeOnMain(_ mainThreadClosure: () -> Void) {
+    if self.current == self.main {
       mainThreadClosure()
     } else {
       
-      let queue = dispatch_get_main_queue()
-      dispatch_sync(queue, {
+      let queue = DispatchQueue.main
+      queue.sync(execute: {
         mainThreadClosure()
       })
       

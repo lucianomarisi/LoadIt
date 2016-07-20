@@ -27,8 +27,8 @@ final class SubclassedNetworkJSONResourceService<Resource: NetworkJSONResourceTy
   }
 }
 
-private let testURL = NSURL(string: "http://test.com")!
-private let url = NSURL(string: "www.test.com")!
+private let testURL = URL(string: "http://test.com")!
+private let url = URL(string: "www.test.com")!
 
 class SubclassedNetworkJSONResourceServiceTests: XCTestCase {
   
@@ -36,7 +36,7 @@ class SubclassedNetworkJSONResourceServiceTests: XCTestCase {
   var mockSession: MockURLSession!
   var mockResource: MockNetworkJSONResource!
   
-  let testRequest = NSURLRequest(URL: testURL)
+  let testRequest = URLRequest(url: testURL)
   
   override func setUp() {
     super.setUp()

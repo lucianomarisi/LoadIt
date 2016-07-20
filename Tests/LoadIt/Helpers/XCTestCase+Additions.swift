@@ -20,10 +20,10 @@ extension XCTestCase {
    input paramater of the expectation this function will wait for. Your test
    must fufill this expectation or the test will fail.
    */
-  func performAsyncTest(timeout: NSTimeInterval = 1.0, failureMessage: String? = nil, file: StaticString = #file, lineNumber: UInt = #line, @noescape test runTest: (XCTestExpectation) -> Void) {
-    let expectation = expectationWithDescription("Async test expectation")
+  func performAsyncTest(_ timeout: TimeInterval = 1.0, failureMessage: String? = nil, file: StaticString = #file, lineNumber: UInt = #line,  test runTest: @noescape (XCTestExpectation) -> Void) {
+    let expectation = self.expectation(withDescription: "Async test expectation")
     runTest(expectation)
-    waitForExpectationsWithTimeout(timeout) { error in
+    waitForExpectations(withTimeout: timeout) { error in
       if let error = error {
         if let failureMessage = failureMessage {
           XCTFail(failureMessage, file: file, line: lineNumber)

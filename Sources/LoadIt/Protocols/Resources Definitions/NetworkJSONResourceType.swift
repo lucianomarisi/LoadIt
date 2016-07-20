@@ -25,7 +25,7 @@ public enum HTTPMethod: String {
  */
 public protocol NetworkResourceType {
   /// The URL of the resource
-  var url: NSURL { get }
+  var url: URL { get }
   
   /// The HTTP method used to fetch this resource
   var HTTPRequestMethod: HTTPMethod { get }
@@ -37,14 +37,14 @@ public protocol NetworkResourceType {
   var JSONBody: AnyObject? { get }
   
   /// The query items to be added to the url to fetch this resource
-  var queryItems: [NSURLQueryItem]? { get }
+  var queryItems: [URLQueryItem]? { get }
   
   /**
    Convenience function that builds a URLRequest for this resource
    
    - returns: A URLRequest or nil if the construction of the request failed
    */
-  func urlRequest() -> NSURLRequest?
+  func urlRequest() -> URLRequest?
 }
 
 // MARK: - NetworkJSONResource defaults
@@ -53,20 +53,20 @@ public extension NetworkResourceType {
   public var HTTPRequestMethod: HTTPMethod { return .GET }
   public var HTTPHeaderFields: [String: String]? { return [:] }
   public var JSONBody: AnyObject? { return nil }
-  public var queryItems: [NSURLQueryItem]? { return nil }
+  public var queryItems: [URLQueryItem]? { return nil }
   
-  public func urlRequest() -> NSURLRequest? {
-    let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
+  public func urlRequest() -> URLRequest? {
+    var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
     urlComponents?.queryItems = queryItems
     
-    guard let urlFromComponents = urlComponents?.URL else { return nil }
+    guard let urlFromComponents = urlComponents?.url else { return nil }
     
-    let request = NSMutableURLRequest(URL: urlFromComponents)
+    var request = URLRequest(url: urlFromComponents)
     request.allHTTPHeaderFields = HTTPHeaderFields
-    request.HTTPMethod = HTTPRequestMethod.rawValue
+    request.httpMethod = HTTPRequestMethod.rawValue
     print(request.allHTTPHeaderFields)
     if let body = JSONBody {
-      request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.PrettyPrinted)
+      request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
     }
     
     return request

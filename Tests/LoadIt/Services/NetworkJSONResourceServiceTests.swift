@@ -9,7 +9,7 @@
 import XCTest
 @testable import LoadIt
 
-private let testURL = NSURL(string: "http://test.com")!
+private let testURL = URL(string: "http://test.com")!
 
 class NetworkJSONResourceServiceTests: XCTestCase {
   
@@ -17,7 +17,7 @@ class NetworkJSONResourceServiceTests: XCTestCase {
   var mockSession: MockURLSession!
   var mockResource: MockDefaultNetworkJSONResource!
   
-  let testRequest = NSURLRequest(URL: testURL)
+  let testRequest = URLRequest(url: testURL)
   
   override func setUp() {
     super.setUp()
@@ -51,7 +51,7 @@ class NetworkJSONResourceServiceTests: XCTestCase {
           XCTFail("No error found")
           return
         }
-        if case NetworkServiceError.CouldNotCreateURLRequest = error { return }
+        if case NetworkServiceError.couldNotCreateURLRequest = error { return }
         XCTFail("Unexpected error: \(error)")
       }
     }
@@ -64,9 +64,9 @@ class NetworkJSONResourceServiceTests: XCTestCase {
     }
   }
   
-  private func assert_fetch_whenSessionCompletesWithHandledStatusCode_callsFailureWithCorrectError(expectedStatusCode expectedStatusCode: Int, file: StaticString = #file, lineNumber: UInt = #line) {
+  private func assert_fetch_whenSessionCompletesWithHandledStatusCode_callsFailureWithCorrectError(expectedStatusCode: Int, file: StaticString = #file, lineNumber: UInt = #line) {
     let expectedError = NSError(domain: "test", code: 999, userInfo: nil)
-    let mockHTTPURLResponse = NSHTTPURLResponse(URL: NSURL(string: "www.test.com")!, statusCode: expectedStatusCode, HTTPVersion: nil, headerFields: nil)
+    let mockHTTPURLResponse = HTTPURLResponse(url: URL(string: "www.test.com")!, statusCode: expectedStatusCode, httpVersion: nil, headerFields: nil)
     performAsyncTest(file: file, lineNumber: lineNumber) { expectation in
       testService.fetch(resource: mockResource) { result in
         expectation.fulfill()
@@ -75,7 +75,7 @@ class NetworkJSONResourceServiceTests: XCTestCase {
           return
         }
         
-        guard case NetworkServiceError.StatusCodeError(let statusCode) = error else {
+        guard case NetworkServiceError.statusCodeError(let statusCode) = error else {
           XCTFail()
           return
         }
@@ -92,9 +92,9 @@ class NetworkJSONResourceServiceTests: XCTestCase {
     }
   }
   
-  private func assert_fetch_whenSessionCompletesWithUnhandledStatusCode_callsFailureWithCorrectError(expectedStatusCode expectedStatusCode: Int, file: StaticString = #file, lineNumber: UInt = #line) {
+  private func assert_fetch_whenSessionCompletesWithUnhandledStatusCode_callsFailureWithCorrectError(expectedStatusCode: Int, file: StaticString = #file, lineNumber: UInt = #line) {
     let expectedError = NSError(domain: "test", code: 999, userInfo: nil)
-    let mockHTTPURLResponse = NSHTTPURLResponse(URL: NSURL(string: "www.test.com")!, statusCode: expectedStatusCode, HTTPVersion: nil, headerFields: nil)
+    let mockHTTPURLResponse = HTTPURLResponse(url: URL(string: "www.test.com")!, statusCode: expectedStatusCode, httpVersion: nil, headerFields: nil)
     performAsyncTest(file: file, lineNumber: lineNumber) { expectation in
       testService.fetch(resource: mockResource) { result in
         expectation.fulfill()
@@ -103,7 +103,7 @@ class NetworkJSONResourceServiceTests: XCTestCase {
           return
         }
         
-        guard case NetworkServiceError.NetworkingError(let testError) = error else {
+        guard case NetworkServiceError.networkingError(let testError) = error else {
           XCTFail()
           return
         }
@@ -124,7 +124,7 @@ class NetworkJSONResourceServiceTests: XCTestCase {
           return
         }
         
-        guard case NetworkServiceError.NetworkingError(let testError) = error else {
+        guard case NetworkServiceError.networkingError(let testError) = error else {
           XCTFail()
           return
         }
@@ -142,7 +142,7 @@ class NetworkJSONResourceServiceTests: XCTestCase {
           XCTFail("No error found")
           return
         }
-        if case NetworkServiceError.NoData = error { return }
+        if case NetworkServiceError.noData = error { return }
         XCTFail()
       }
       mockSession.capturedCompletion!(nil, nil, nil)
@@ -157,10 +157,10 @@ class NetworkJSONResourceServiceTests: XCTestCase {
           XCTFail("No error found")
           return
         }
-        if case JSONParsingError.InvalidJSONData = error { return }
+        if case JSONParsingError.invalidJSONData = error { return }
         XCTFail()
       }
-      mockSession.capturedCompletion!(NSData(), nil, nil)
+      mockSession.capturedCompletion!(Data(), nil, nil)
     }
   }
   

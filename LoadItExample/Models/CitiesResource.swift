@@ -9,21 +9,21 @@
 import Foundation
 import LoadIt
 
-private let baseURL = NSURL(string: "http://localhost:8000/")!
+private let baseURL = URL(string: "http://localhost:8000/")!
 
 struct CitiesResource: NetworkJSONResourceType, DiskJSONResourceType {
   typealias Model = [City]
   
-  let url: NSURL
+  let url: URL
   let filename: String
   
   init(continent: String) {
-    url = baseURL.URLByAppendingPathComponent("\(continent).json")
+    url = try! baseURL.appendingPathComponent("\(continent).json")
     filename = continent
   }
   
   //MARK: JSONResource
-  func modelFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> [City]? {
+  func modelFrom(jsonDictionary: [String: AnyObject]) -> [City]? {
     guard let
       citiesJSONArray: [[String: AnyObject]] = jsonDictionary["cities"] as? [[String: AnyObject]]
       else {

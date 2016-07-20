@@ -16,8 +16,8 @@ struct MockResource: ResourceType {
 struct MockService: ResourceServiceType {
   typealias Resource = MockResource
   
-  func fetch(resource resource: Resource, completion: (Result<Resource.Model>) -> Void) {
-    completion(Result.Success("Mock result"))
+  func fetch(resource: Resource, completion: (Result<Resource.Model>) -> Void) {
+    completion(Result.success("Mock result"))
   }
   
 }
@@ -28,14 +28,14 @@ private typealias MockResourceOperation = ResourceOperation<MockService>
 
 class ViewController: UIViewController {
 
-  private let operationQueue = NSOperationQueue()
+  private let operationQueue = OperationQueue()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
     let americaResource = CitiesResource(continent: "america")
     let citiesNetworkResourceOperation = CitiesNetworkResourceOperation(resource: americaResource) { [weak self] operation, result in
-      if operation.cancelled { return }
+      if operation.isCancelled { return }
       self?.log(result: result)
     }
     operationQueue.addOperation(citiesNetworkResourceOperation)
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     
     let asiaResource = CitiesResource(continent: "asia")
     let citiesResourceOperation = CitiesDiskResourceOperation(resource: asiaResource) { [weak self] operation, result in
-      if operation.cancelled { return }
+      if operation.isCancelled { return }
       self?.log(result: result)
     }
     operationQueue.addOperation(citiesResourceOperation)
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     let mockResource = MockResource()
     let mockService = MockService()
     let mockCitiesResourceOperation = MockResourceOperation(resource: mockResource, service: mockService){ [weak self] operation, result in
-      if operation.cancelled { return }
+      if operation.isCancelled { return }
       self?.log(result: result)
     }
 //    mockCitiesResourceOperation.execute()
@@ -74,8 +74,8 @@ class ViewController: UIViewController {
     
   }
     
-  func log<T>(result result: Result<T>) {
-    if case .Success(let cities) = result {
+  func log<T>(result: Result<T>) {
+    if case .success(let cities) = result {
       print(cities)
     } else {
       print(result)

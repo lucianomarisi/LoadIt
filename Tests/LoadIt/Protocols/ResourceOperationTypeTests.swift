@@ -16,14 +16,14 @@ class TestResourceOperation: ResourceOperationType {
   var cancelled: Bool = false
   var capturedFinishedErrors: [NSError]?
   var capturedResult: Result<String>?
-  var captureDidFinishFetchingResourceThread: NSThread?
+  var captureDidFinishFetchingResourceThread: Thread?
   
-  func finish(errors: [NSError]) {
+  func finish(_ errors: [NSError]) {
     capturedFinishedErrors = errors
   }
   
-  func didFinishFetchingResource(result result: Result<String>) {
-    captureDidFinishFetchingResourceThread = NSThread.currentThread()
+  func didFinishFetchingResource(result: Result<String>) {
+    captureDidFinishFetchingResourceThread = Thread.current
     capturedResult = result
   }
   
@@ -48,7 +48,7 @@ class ResourceOperationTypeTests: XCTestCase {
   
   func test_fetch_callsFinishAndDidFinish_withCorrectResultOnSuccess() {
     testResourceOperation.fetch(resource: MockResource(), usingService: mockService)
-    let expectedResult = Result.Success("some result")
+    let expectedResult = Result.success("some result")
     mockService.capturedCompletion!(expectedResult)
     XCTAssertNotNil(testResourceOperation.capturedFinishedErrors)
     XCTAssertEqual(testResourceOperation.capturedFinishedErrors!.count, 0)
@@ -69,7 +69,7 @@ class ResourceOperationTypeTests: XCTestCase {
   func test_fetch_doesNotCallFinishAndDidFinish_whenOperationIsCancelled_afterServiceFetches() {
     testResourceOperation.fetch(resource: MockResource(), usingService: mockService)
     testResourceOperation.cancelled = true
-    let expectedResult = Result.Success("some result")
+    let expectedResult = Result.success("some result")
     mockService.capturedCompletion!(expectedResult)
     XCTAssertNil(testResourceOperation.capturedFinishedErrors)
     XCTAssertNil(testResourceOperation.capturedResult)
