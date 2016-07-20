@@ -23,6 +23,7 @@
 		4F3CFC1F1D401EC10074B6F5 /* NetworkResourceTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC1E1D401EC10074B6F5 /* NetworkResourceTypeTests.swift */; };
 		4F3CFC211D401EDF0074B6F5 /* MockDefaultNetworkJSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC201D401EDF0074B6F5 /* MockDefaultNetworkJSONResource.swift */; };
 		4F3CFC231D401EF90074B6F5 /* MockNetworkJSONResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC221D401EF90074B6F5 /* MockNetworkJSONResource.swift */; };
+		4F3CFC251D401FE00074B6F5 /* ResourceOperationTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC241D401FE00074B6F5 /* ResourceOperationTypeTests.swift */; };
 		4F3D693E1D1F36D700E753D6 /* LoadIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D693D1D1F36D700E753D6 /* LoadIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3D69451D1F36D800E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69491D1F36D800E753D6 /* LoadItTests.swift */; };
@@ -72,6 +73,7 @@
 		4F3CFC1E1D401EC10074B6F5 /* NetworkResourceTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResourceTypeTests.swift; sourceTree = "<group>"; };
 		4F3CFC201D401EDF0074B6F5 /* MockDefaultNetworkJSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDefaultNetworkJSONResource.swift; sourceTree = "<group>"; };
 		4F3CFC221D401EF90074B6F5 /* MockNetworkJSONResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkJSONResource.swift; sourceTree = "<group>"; };
+		4F3CFC241D401FE00074B6F5 /* ResourceOperationTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceOperationTypeTests.swift; sourceTree = "<group>"; };
 		4F3D693A1D1F36D700E753D6 /* LoadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3D693D1D1F36D700E753D6 /* LoadIt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadIt.h; sourceTree = "<group>"; };
 		4F3D693F1D1F36D700E753D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				4F3CFC141D401DE40074B6F5 /* JSONResourceTypeTests.swift */,
 				4F3CFC1E1D401EC10074B6F5 /* NetworkResourceTypeTests.swift */,
+				4F3CFC241D401FE00074B6F5 /* ResourceOperationTypeTests.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				4F3CFC191D401E220074B6F5 /* MockObject.swift in Sources */,
 				4F3CFC231D401EF90074B6F5 /* MockNetworkJSONResource.swift in Sources */,
 				4F3CFC1D1D401E530074B6F5 /* MockDefaultJSONResourceType.swift in Sources */,
+				4F3CFC251D401FE00074B6F5 /* ResourceOperationTypeTests.swift in Sources */,
 				4F3CFC1F1D401EC10074B6F5 /* NetworkResourceTypeTests.swift in Sources */,
 				4F3D694A1D1F36D800E753D6 /* LoadItTests.swift in Sources */,
 				4F3CFC171D401E0B0074B6F5 /* MockJSONArrayResourceType.swift in Sources */,
