@@ -30,10 +30,10 @@
 		4F3CFC311D4022710074B6F5 /* SubclassedNetworkJSONResourceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CFC301D4022710074B6F5 /* SubclassedNetworkJSONResourceServiceTests.swift */; };
 		4F3CFC321D4023FE0074B6F5 /* BundleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69981D1F3EB900E753D6 /* BundleType.swift */; };
 		4F3CFC331D4024290074B6F5 /* JSONResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D69791D1F39A700E753D6 /* JSONResourceType.swift */; };
+		4F3CFC361D402DD10074B6F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D695C1D1F374E00E753D6 /* ViewController.swift */; };
 		4F3D693E1D1F36D700E753D6 /* LoadIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3D693D1D1F36D700E753D6 /* LoadIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3D69451D1F36D800E753D6 /* LoadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D693A1D1F36D700E753D6 /* LoadIt.framework */; };
 		4F3D695B1D1F374E00E753D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D695A1D1F374E00E753D6 /* AppDelegate.swift */; };
-		4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D695C1D1F374E00E753D6 /* ViewController.swift */; };
 		4F3D69601D1F374E00E753D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D695E1D1F374E00E753D6 /* Main.storyboard */; };
 		4F3D69621D1F374E00E753D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69611D1F374E00E753D6 /* Assets.xcassets */; };
 		4F3D69651D1F374E00E753D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D69631D1F374E00E753D6 /* LaunchScreen.storyboard */; };
@@ -220,13 +220,39 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		4F3CFC341D402BF60074B6F5 /* LoadIt */ = {
+			isa = PBXGroup;
+			children = (
+				4F3CFC291D4020890074B6F5 /* Helpers */,
+				4F3CFC0E1D401C670074B6F5 /* Mocks */,
+				4F3CFC0B1D401C210074B6F5 /* Operations */,
+				4F3CFC131D401DCA0074B6F5 /* Protocols */,
+				4F3CFC261D4020540074B6F5 /* Services */,
+				4F3D694B1D1F36D800E753D6 /* Info.plist */,
+			);
+			path = LoadIt;
+			sourceTree = "<group>";
+		};
+		4F3CFC351D402D610074B6F5 /* LoadIt */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D69971D1F3E7C00E753D6 /* Convenience Types */,
+				4F196F591D2001EF0030101A /* Operations */,
+				4F3D69961D1F3E6F00E753D6 /* Protocols */,
+				4F6F43411D280F2100501353 /* Utilities */,
+				4F3D693F1D1F36D700E753D6 /* Info.plist */,
+				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
+			);
+			path = LoadIt;
+			sourceTree = "<group>";
+		};
 		4F3D69301D1F36D700E753D6 = {
 			isa = PBXGroup;
 			children = (
-				4F3D693C1D1F36D700E753D6 /* LoadIt */,
 				4F3D69591D1F374E00E753D6 /* LoadItExample */,
-				4F3D69481D1F36D800E753D6 /* LoadItTests */,
 				4F3D693B1D1F36D700E753D6 /* Products */,
+				4F3D693C1D1F36D700E753D6 /* Sources */,
+				4F3D69481D1F36D800E753D6 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,30 +266,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4F3D693C1D1F36D700E753D6 /* LoadIt */ = {
+		4F3D693C1D1F36D700E753D6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D69971D1F3E7C00E753D6 /* Convenience Types */,
-				4F196F591D2001EF0030101A /* Operations */,
-				4F3D69961D1F3E6F00E753D6 /* Protocols */,
-				4F6F43411D280F2100501353 /* Utilities */,
-				4F3D693F1D1F36D700E753D6 /* Info.plist */,
-				4F3D693D1D1F36D700E753D6 /* LoadIt.h */,
+				4F3CFC351D402D610074B6F5 /* LoadIt */,
 			);
-			path = LoadIt;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		4F3D69481D1F36D800E753D6 /* LoadItTests */ = {
+		4F3D69481D1F36D800E753D6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4F3CFC291D4020890074B6F5 /* Helpers */,
-				4F3CFC0E1D401C670074B6F5 /* Mocks */,
-				4F3CFC0B1D401C210074B6F5 /* Operations */,
-				4F3CFC131D401DCA0074B6F5 /* Protocols */,
-				4F3CFC261D4020540074B6F5 /* Services */,
-				4F3D694B1D1F36D800E753D6 /* Info.plist */,
+				4F3CFC341D402BF60074B6F5 /* LoadIt */,
 			);
-			path = LoadItTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		4F3D69591D1F374E00E753D6 /* LoadItExample */ = {
@@ -508,8 +524,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3D69831D1F3B1D00E753D6 /* CitiesResource.swift in Sources */,
-				4F3D695D1D1F374E00E753D6 /* ViewController.swift in Sources */,
 				4F3D695B1D1F374E00E753D6 /* AppDelegate.swift in Sources */,
+				4F3CFC361D402DD10074B6F5 /* ViewController.swift in Sources */,
 				4F3D69781D1F38BB00E753D6 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,7 +661,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LoadIt/Info.plist;
+				INFOPLIST_FILE = Sources/LoadIt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucianomarisi.LoadIt;
@@ -663,7 +679,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LoadIt/Info.plist;
+				INFOPLIST_FILE = Sources/LoadIt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucianomarisi.LoadIt;
@@ -675,7 +691,7 @@
 		4F3D69521D1F36D800E753D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = LoadItTests/Info.plist;
+				INFOPLIST_FILE = Tests/LoadIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucianomarisi.LoadItTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -685,7 +701,7 @@
 		4F3D69531D1F36D800E753D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = LoadItTests/Info.plist;
+				INFOPLIST_FILE = Tests/LoadIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucianomarisi.LoadItTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
