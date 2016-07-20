@@ -19,7 +19,22 @@ public protocol ResourceType {
  *  Defines a specific ResourceType used for JSON resources
  */
 public protocol JSONResourceType: ResourceType {
+  /**
+   Parse a Model from a JSON dictionary
+   
+   - parameter jsonDictionary: The JSON dictionary used to decode the Model
+   
+   - returns: A parsed Model or nil
+   */
   func modelFrom(jsonDictionary jsonDictionary: [String : AnyObject]) -> Model?
+  
+  /**
+   Parse a Model from a JSON array
+   
+   - parameter jsonArray: The JSON array used to decode the Model
+   
+   - returns: A parsed Model or nil
+   */
   func modelFrom(jsonArray jsonArray: [AnyObject]) -> Model?
 }
 

@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Enum used to represent the HTTP method
+ */
 public enum HTTPMethod: String {
   case GET
   case POST
@@ -17,6 +20,9 @@ public enum HTTPMethod: String {
   case PUT
 }
 
+/**
+ *  Protocol used to define a resource to be retrieved from the network
+ */
 public protocol NetworkResourceType {
   /// The URL of the resource
   var url: NSURL { get }
