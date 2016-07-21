@@ -25,7 +25,7 @@ struct CitiesResource: NetworkJSONResourceType, DiskJSONResourceType {
   //MARK: JSONResource
   func modelFrom(jsonDictionary jsonDictionary: [String: AnyObject]) -> [City]? {
     guard let
-      citiesJSONArray: [[String: AnyObject]] = jsonDictionary["cities"] as? [[String: AnyObject]]
+      citiesJSONArray = jsonDictionary["cities"] as? [[String: AnyObject]]
       else {
         return []
     }
