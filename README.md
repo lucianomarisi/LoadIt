@@ -1,3 +1,5 @@
+# THIS IS REPOSITORY IS NOW DEPRECATED, USE IN [TABResourceLoader](https://github.com/theappbusiness/TABResourceLoader) INSTEAD
+
 # LoadIt
 
 [![Build Status](https://travis-ci.org/lucianomarisi/LoadIt.svg?branch=master)](https://travis-ci.org/lucianomarisi/LoadIt)

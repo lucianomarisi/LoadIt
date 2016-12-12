@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'LoadIt'
-  spec.version      = '0.1.0'
+  spec.version      = '0.2.0'
   spec.license      = { :type => 'MIT', :text => <<-LICENSE
     The MIT License (MIT)
     Copyright (c) 2016 Luciano Marisi
@@ -18,4 +18,5 @@ Pod::Spec.new do |spec|
   }
   spec.source_files = 'Sources/LoadIt/**/*.swift'
   spec.ios.deployment_target = '8.0'
+  spec.deprecated_in_favor_of = 'TABResourceLoader'
 end
